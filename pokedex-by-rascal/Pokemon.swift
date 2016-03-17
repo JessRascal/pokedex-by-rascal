@@ -23,6 +23,8 @@ class Pokemon {
     private var _nextEvolutionLevel: String!
     private var _pokemonUrl: String!
     
+    
+    // Getters (Encapsulation).
     var name: String {
         return _name
     }
@@ -94,7 +96,7 @@ class Pokemon {
         return _nextEvolutionLevel
     }
     
-    
+    // Initialization.
     init(name: String, pokedexId: Int) {
         self._name = name
         self._pokedexId = pokedexId
@@ -102,6 +104,7 @@ class Pokemon {
         _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
     }
     
+    // Retireve the Pokemon data from the web APIs, and inform once complete using the closure.
     func downloadPokemonDetails(completed: DownloadComplete) {
         let url = NSURL(string: _pokemonUrl)!
         Alamofire.request(.GET, url).responseJSON { response in
@@ -125,11 +128,6 @@ class Pokemon {
                     self._defense = "\(defense)"
                 }
                 
-                print(self._weight)
-                print(self._height)
-                print(self._attack)
-                print(self._defense)
-                
                 if let types = dict["types"] as? [Dictionary<String, String>] where types.count > 0 {
                     if let name = types[0]["name"] {
                         self._type = name.capitalizedString
@@ -146,8 +144,6 @@ class Pokemon {
                     self._type = ""
                 }
                 
-                print(self._type)
-                
                 if let descArr = dict["descriptions"] as? [Dictionary<String, String>] where descArr.count > 0 {
                     if let url = descArr[0]["resource_uri"] {
                         let nsurl = NSURL(string: "\(URL_BASE)\(url)")!
@@ -157,7 +153,6 @@ class Pokemon {
                             if let descDict = desResult.value as? Dictionary<String, AnyObject> {
                                 if let description = descDict["description"] as? String {
                                     self._description = description
-                                    print(self._description)
                                 }
                             }
                             completed()
@@ -183,10 +178,6 @@ class Pokemon {
                                     if let lvl = evolutions[0]["level"] as? Int {
                                         self._nextEvolutionLevel = "\(lvl)"
                                     }
-                                    
-                                    print(self._nextEvolutionId)
-                                    print(self._nextEvolutionText)
-                                    print(self._nextEvolutionLevel)
                                 }
                             }
                             

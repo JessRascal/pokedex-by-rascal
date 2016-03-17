@@ -28,17 +28,19 @@ class PokemonDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nameLabel.text = pokemon.name
+        nameLabel.text = pokemon.name.capitalizedString
         let image = UIImage(named: "\(pokemon.pokedexId)")
         mainImage.image = image
         currentEvoImage.image = image
         
+        // Call the UpdateUI function once the downloading from the API has completed.
         pokemon.downloadPokemonDetails { () -> () in
             // This will be called after download is done.
             self.updateUI()
         }
     }
     
+    // Update the UI with the selected Pokemon's details.
     func updateUI() {
         descriptionLabel.text = pokemon.description
         typeLabel.text = pokemon.type
@@ -56,16 +58,13 @@ class PokemonDetailVC: UIViewController {
             nextEvoImage.image = UIImage(named: pokemon.nextEvolutionId)
             var str = "Next Evolution: \(pokemon.nextEvolutionText)"
             if pokemon.nextEvolutionLevel != "" {
-                str += " - Level \(pokemon.nextEvolutionLevel)"
+                str += " (Level \(pokemon.nextEvolutionLevel))"
+                evoLabel.text = str
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    // Dismiss the DetailsVC when the back button is tapped.
     @IBAction func backButtonTapped(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
