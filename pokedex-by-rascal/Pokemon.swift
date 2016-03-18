@@ -22,9 +22,9 @@ class Pokemon {
     private var _nextEvolutionId: String!
     private var _nextEvolutionLevel: String!
     private var _pokemonUrl: String!
+    private var _moves = [Move]()
     
-    
-    // Getters (Encapsulation).
+    // Getters (Data Encapsulation).
     var name: String {
         return _name
     }
@@ -96,6 +96,10 @@ class Pokemon {
         return _nextEvolutionLevel
     }
     
+    var moves: [Move] {
+        return _moves
+    }
+    
     // Initialization.
     init(name: String, pokedexId: Int) {
         self._name = name
@@ -104,12 +108,13 @@ class Pokemon {
         _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
     }
     
-    // Retireve the Pokemon data from the web APIs, and inform once complete using the closure.
+    // Retrieve the Pokemon data from the web APIs, and inform once complete using the closure.
     func downloadPokemonDetails(completed: DownloadComplete) {
         let url = NSURL(string: _pokemonUrl)!
         Alamofire.request(.GET, url).responseJSON { response in
             let result = response.result
             
+            // Get the Pokemon's bio details.
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 
                 if let weight = dict["weight"] as? String {
@@ -144,6 +149,7 @@ class Pokemon {
                     self._type = ""
                 }
                 
+                // Get the Pokemon's description.
                 if let descArr = dict["descriptions"] as? [Dictionary<String, String>] where descArr.count > 0 {
                     if let url = descArr[0]["resource_uri"] {
                         let nsurl = NSURL(string: "\(URL_BASE)\(url)")!
@@ -161,32 +167,61 @@ class Pokemon {
                     } else {
                         self._description = ""
                     }
-                    
-                    if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] where evolutions.count > 0{
-                        if let to = evolutions[0]["to"] as? String {
-                            
-                            // Can't support mega pokemon right now but api still has mega data.
-                            if to.rangeOfString("mega") == nil {
-                                if let uri = evolutions[0]["resource_uri"] as? String {
-                                    let newStr = uri.stringByReplacingOccurrencesOfString("/api/v1/pokemon/", withString: "")
-                                    let num = newStr.stringByReplacingOccurrencesOfString("/", withString: "")
-                                    
-                                    self._nextEvolutionId = num
-                                    self._nextEvolutionText = to
-                                    
-                                    
-                                    if let lvl = evolutions[0]["level"] as? Int {
-                                        self._nextEvolutionLevel = "\(lvl)"
-                                    }
+                } // descArr end.
+                
+                // Get the Pokemon's evolutions.
+                if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] where evolutions.count > 0 {
+                    if let to = evolutions[0]["to"] as? String {
+                        
+                        // Can't support mega pokemon right now but api still has mega data.
+                        if to.rangeOfString("mega") == nil {
+                            if let uri = evolutions[0]["resource_uri"] as? String {
+                                let newStr = uri.stringByReplacingOccurrencesOfString("/api/v1/pokemon/", withString: "")
+                                let num = newStr.stringByReplacingOccurrencesOfString("/", withString: "")
+                                
+                                self._nextEvolutionId = num
+                                self._nextEvolutionText = to
+                                
+                                if let lvl = evolutions[0]["level"] as? Int {
+                                    self._nextEvolutionLevel = "\(lvl)"
                                 }
                             }
-                            
                         }
                     }
-                    
-                }
+                } // evolutions end.
                 
-            }
+                // Get the Pokemon's moves.
+                if let movesArr = dict["moves"] as? [Dictionary<String, AnyObject>] where movesArr.count > 0 {
+                    for x in 0..<movesArr.count {
+                        if let url = movesArr[x]["resource_uri"] as? String {
+                            self._moves.append(Move(url: url))
+                        }
+                    }
+                } // movesArr end.
+                
+            } // dict end.
+            
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
