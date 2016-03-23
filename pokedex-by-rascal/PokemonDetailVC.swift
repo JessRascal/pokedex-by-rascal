@@ -19,8 +19,8 @@ class PokemonDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet weak var pokedexLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var attackLabel: UILabel!
-    @IBOutlet weak var currentEvoImage: UIImageView!
-    @IBOutlet weak var nextEvoImage: UIImageView!
+    @IBOutlet weak var currentEvoButton: UIButton!
+    @IBOutlet weak var nextEvoButton: UIButton!
     @IBOutlet weak var evoLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var bioSV: UIStackView!
@@ -34,7 +34,7 @@ class PokemonDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         nameLabel.text = pokemon.name.capitalizedString
         let image = UIImage(named: "\(pokemon.pokedexId)")
         mainImage.image = image
-        currentEvoImage.image = image
+        currentEvoButton.setImage(image, forState: .Normal)
         
         // Call the UpdateUI function once the downloading from the API has completed.
         pokemon.downloadPokemonDetails { () -> () in
@@ -59,10 +59,10 @@ class PokemonDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if pokemon.nextEvolutionId == "" {
             evoLabel.text = "No Evolutions"
-            nextEvoImage.hidden = true
+            nextEvoButton.hidden = true
         } else {
-            nextEvoImage.hidden = false
-            nextEvoImage.image = UIImage(named: pokemon.nextEvolutionId)
+            nextEvoButton.hidden = false
+            nextEvoButton.setImage(UIImage(named: pokemon.nextEvolutionId), forState: .Normal)
             var str = "Next Evolution: \(pokemon.nextEvolutionText)"
             if pokemon.nextEvolutionLevel != "" {
                 str += " (Level \(pokemon.nextEvolutionLevel))"
@@ -83,6 +83,11 @@ class PokemonDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1 // CHANGE
+    }
+    
+    // Go to the bio of the next evolution Pokemon when its button is tapped.
+    @IBAction func nextEvoTapped(sender: AnyObject) {
+        
     }
     
     // Dismiss the DetailsVC when the back button is tapped.
