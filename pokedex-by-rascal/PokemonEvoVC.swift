@@ -9,31 +9,42 @@
 import UIKit
 
 class PokemonEvoVC: UIViewController {
-
-    @IBOutlet weak var nameTest: UILabel!
+    
+    @IBOutlet weak var currentEvoName: UILabel!
+    @IBOutlet weak var currentEvoImage: CircleImageWithBorder!
+    @IBOutlet weak var nextEvoImage: CircleImageWithBorder!
+    @IBOutlet weak var nextEvoName: UILabel!
+    @IBOutlet weak var nextEvoLevel: UILabel!
     
     var pokemon: Pokemon!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        nameTest.text = pokemon.name
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        currentEvoName.text = pokemon.name.capitalizedString
+        let currentImage = UIImage(named: "\(pokemon.pokedexId)")
+        currentEvoImage.image = currentImage
+        
+        // Call the UpdateUI function once the downloading from the API has completed.
+        pokemon.downloadPokemonDetails { () -> () in
+            // This will be called after download is done.
+            self.updateUI()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func updateUI() {
+        if pokemon.nextEvolutionId == "" {
+            //            evoLabel.text = "No Evolutions"
+            nextEvoImage.hidden = true
+            nextEvoName.text = "No Further Evolution"
+            nextEvoLevel.hidden = true
+        } else {
+            nextEvoImage.hidden = false
+            nextEvoImage.image = UIImage(named: pokemon.nextEvolutionId)
+            nextEvoName.text = pokemon.nextEvolutionText
+            if pokemon.nextEvolutionLevel != "" {
+                nextEvoLevel.text = "Level \(pokemon.nextEvolutionLevel)"
+            }
+        }
     }
-    */
-
 }

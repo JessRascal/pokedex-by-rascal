@@ -11,7 +11,7 @@ import UIKit
 class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     private(set) lazy var pagedVCs: [UIViewController] = {
-        return [self.getVC("BioVC"), self.getVC("EvoVC"), self.getVC("MovesVC")]
+        return [self.getVC("Bio"), self.getVC("Evo"), self.getVC("Moves")]
     }()
     
     var selectedPokemon: Pokemon!
@@ -25,6 +25,26 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         // Set the starting VC.
         if let startingVC = pagedVCs.first {
             setViewControllers([startingVC], direction: .Forward, animated: true, completion: nil)
+            if let navTitle = startingVC.restorationIdentifier {
+                setNavTitle(navTitle)
+            }
+        }
+        
+        // Set the colours of the page control.
+        UIPageControl.appearance().backgroundColor = UIColor.appSecondaryColor()
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.appAccentColor()
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.appPrimaryColor()
+        
+        // Add the audio trigger button the nav bar.
+        let musicIcon = MusicPlayerSingleton.globalMusicPlayer.musicIcon
+        let audioButton = UIBarButtonItem(image: musicIcon, style: .Plain, target: self, action: #selector(triggerMusicBg))
+        navigationItem.setRightBarButtonItem(audioButton, animated: true)
+    }
+    
+    func triggerMusicBg() {
+        MusicPlayerSingleton.globalMusicPlayer.triggerMusicBg()
+        if let barButton = navigationItem.rightBarButtonItem {
+            barButton.image = MusicPlayerSingleton.globalMusicPlayer.musicIcon
         }
     }
     
@@ -45,6 +65,10 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         if let movesBC = currentVC as? PokemonMovesVC {
             movesBC.pokemon = selectedPokemon
         }
+    }
+    
+    func setNavTitle(navTitle: String) {
+        navigationItem.title = navTitle
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
@@ -93,6 +117,14 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         }
         
         return pagedVCs[nextIndex]
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if let currentVC = viewControllers?.first {
+            if let navTitle = currentVC.restorationIdentifier {
+                setNavTitle(navTitle)
+            }
+        }
     }
     
     // Display the page indicator graphic.

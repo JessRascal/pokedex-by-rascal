@@ -26,27 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pokedex-by-rascal/PokemonBioVC.swift"
-            timestampString = "480601490.453705"
+            timestampString = "480617721.398309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pokedex-by-rascal/PokemonEvoVC.swift"
-            timestampString = "480603540.753206"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -73,14 +57,46 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "pokedex-by-rascal/DetailsPageVC.swift"
-            timestampString = "480603993.675301"
+            filePath = "pokedex-by-rascal/MusicPlayerSingleton.swift"
+            timestampString = "480628141.910413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "getVC(_:)"
-            landmarkType = "5">
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "MusicPlayerSingleton"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pokedex_by_rascal.MusicPlayerSingleton.globalMusicPlayer.unsafeMutableAddressor : pokedex_by_rascal.AudioPlayer"
+                  moduleName = "pokedex-by-rascal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jess/Library/Mobile%20Documents/com~apple~CloudDocs/Development/studying/devslopes/beginner-ios/lecture99/pokedex-by-rascal/pokedex-by-rascal/MusicPlayerSingleton.swift"
+                  timestampString = "480628339.739633"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static pokedex_by_rascal.MusicPlayerSingleton.globalMusicPlayer.getter : pokedex_by_rascal.AudioPlayer"
+                  moduleName = "pokedex-by-rascal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jess/Library/Mobile%20Documents/com~apple~CloudDocs/Development/studying/devslopes/beginner-ios/lecture99/pokedex-by-rascal/pokedex-by-rascal/MusicPlayerSingleton.swift"
+                  timestampString = "480628339.739845"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

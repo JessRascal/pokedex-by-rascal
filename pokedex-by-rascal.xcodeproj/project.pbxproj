@@ -11,6 +11,11 @@
 		C80814FF1CA4971E00E47442 /* DetailsPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80814FE1CA4971E00E47442 /* DetailsPageVC.swift */; };
 		C80815011CA498AA00E47442 /* PokemonEvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80815001CA498AA00E47442 /* PokemonEvoVC.swift */; };
 		C80815031CA498C900E47442 /* PokemonMovesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80815021CA498C900E47442 /* PokemonMovesVC.swift */; };
+		C80815051CA58BCE00E47442 /* AppColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80815041CA58BCE00E47442 /* AppColours.swift */; };
+		C80815071CA5967600E47442 /* CircleImageWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80815061CA5967600E47442 /* CircleImageWithBorder.swift */; };
+		C80815091CA5AB5B00E47442 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80815081CA5AB5B00E47442 /* AudioPlayer.swift */; };
+		C808150D1CA5B97400E47442 /* MusicPlayerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808150C1CA5B97400E47442 /* MusicPlayerSingleton.swift */; };
+		C808150F1CA5DF4800E47442 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808150E1CA5DF4800E47442 /* CircleView.swift */; };
 		C86D96E71C98BA1C00C6F13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D96E61C98BA1C00C6F13A /* AppDelegate.swift */; };
 		C86D96E91C98BA1C00C6F13A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D96E81C98BA1C00C6F13A /* ViewController.swift */; };
 		C86D96EE1C98BA1C00C6F13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C86D96ED1C98BA1C00C6F13A /* Assets.xcassets */; };
@@ -35,6 +40,11 @@
 		C80814FE1CA4971E00E47442 /* DetailsPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsPageVC.swift; sourceTree = "<group>"; };
 		C80815001CA498AA00E47442 /* PokemonEvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonEvoVC.swift; sourceTree = "<group>"; };
 		C80815021CA498C900E47442 /* PokemonMovesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonMovesVC.swift; sourceTree = "<group>"; };
+		C80815041CA58BCE00E47442 /* AppColours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColours.swift; sourceTree = "<group>"; };
+		C80815061CA5967600E47442 /* CircleImageWithBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageWithBorder.swift; sourceTree = "<group>"; };
+		C80815081CA5AB5B00E47442 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		C808150C1CA5B97400E47442 /* MusicPlayerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayerSingleton.swift; sourceTree = "<group>"; };
+		C808150E1CA5DF4800E47442 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		C86D96E31C98BA1C00C6F13A /* pokedex-by-rascal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokedex-by-rascal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86D96E61C98BA1C00C6F13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86D96E81C98BA1C00C6F13A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +93,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C808150B1CA5B95400E47442 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C808150C1CA5B97400E47442 /* MusicPlayerSingleton.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		C86D96DA1C98BA1C00C6F13A = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +122,7 @@
 		C86D96E51C98BA1C00C6F13A /* pokedex-by-rascal */ = {
 			isa = PBXGroup;
 			children = (
+				C808150B1CA5B95400E47442 /* Util */,
 				C86D96FA1C98BD5200C6F13A /* Model */,
 				C86D96FD1C98C24200C6F13A /* View */,
 				C86D97031C98C8DD00C6F13A /* Controller */,
@@ -132,6 +151,10 @@
 				C86D96FE1C98C27300C6F13A /* PokeCell.swift */,
 				C86D96EF1C98BA1C00C6F13A /* LaunchScreen.storyboard */,
 				C86D970B1C99519100C6F13A /* Main.storyboard */,
+				C80815041CA58BCE00E47442 /* AppColours.swift */,
+				C80815081CA5AB5B00E47442 /* AudioPlayer.swift */,
+				C80815061CA5967600E47442 /* CircleImageWithBorder.swift */,
+				C808150E1CA5DF4800E47442 /* CircleView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -293,12 +316,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86D96FF1C98C27300C6F13A /* PokeCell.swift in Sources */,
+				C80815051CA58BCE00E47442 /* AppColours.swift in Sources */,
 				C86D96E91C98BA1C00C6F13A /* ViewController.swift in Sources */,
+				C80815071CA5967600E47442 /* CircleImageWithBorder.swift in Sources */,
 				C86D96E71C98BA1C00C6F13A /* AppDelegate.swift in Sources */,
 				C86D970A1C994E6200C6F13A /* PokemonBioVC.swift in Sources */,
+				C808150D1CA5B97400E47442 /* MusicPlayerSingleton.swift in Sources */,
 				C88DCFA61C9CA65400744B10 /* Move.swift in Sources */,
 				C88DCFA41C9B632F00744B10 /* MovesCell.swift in Sources */,
 				C80814FF1CA4971E00E47442 /* DetailsPageVC.swift in Sources */,
+				C80815091CA5AB5B00E47442 /* AudioPlayer.swift in Sources */,
+				C808150F1CA5DF4800E47442 /* CircleView.swift in Sources */,
 				C80815031CA498C900E47442 /* PokemonMovesVC.swift in Sources */,
 				C88DCFA21C9A0A6500744B10 /* Constants.swift in Sources */,
 				C86D96FC1C98BD6A00C6F13A /* Pokemon.swift in Sources */,
@@ -418,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "pokedex-by-rascal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.justonejess.pokedex-by-rascal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "pokedex-by-rascal/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.justonejess.pokedex-by-rascal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
