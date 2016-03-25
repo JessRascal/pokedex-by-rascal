@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PokemonDetailVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PokemonBioVC: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mainImage: UIImageView!
@@ -34,22 +34,18 @@ class PokemonDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         nameLabel.text = pokemon.name.capitalizedString
         let image = UIImage(named: "\(pokemon.pokedexId)")
         mainImage.image = image
-        currentEvoButton.setImage(image, forState: .Normal)
+//        currentEvoButton.setImage(image, forState: .Normal)
         
         // Call the UpdateUI function once the downloading from the API has completed.
         pokemon.downloadPokemonDetails { () -> () in
             // This will be called after download is done.
             self.updateUI()
         }
-        
-        tableView.hidden = true
-        tableView.delegate = self
-        tableView.dataSource = self
     }
     
     // Update the UI with the selected Pokemon's details.
     func updateUI() {
-        descriptionLabel.text = pokemon.description
+        //descriptionLabel.text = pokemon.description // WHAT DATA IS THIS LINKED TO???
         typeLabel.text = pokemon.type
         defenseLabel.text = pokemon.defense
         heightLabel.text = pokemon.height
@@ -57,33 +53,33 @@ class PokemonDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         weightLabel.text = pokemon.weight
         attackLabel.text = pokemon.attack
         
-        if pokemon.nextEvolutionId == "" {
-            evoLabel.text = "No Evolutions"
-            nextEvoButton.hidden = true
-        } else {
-            nextEvoButton.hidden = false
-            nextEvoButton.setImage(UIImage(named: pokemon.nextEvolutionId), forState: .Normal)
-            var str = "Next Evolution: \(pokemon.nextEvolutionText)"
-            if pokemon.nextEvolutionLevel != "" {
-                str += " (Level \(pokemon.nextEvolutionLevel))"
-                evoLabel.text = str
-            }
-        }
+//        if pokemon.nextEvolutionId == "" {
+//            evoLabel.text = "No Evolutions"
+//            nextEvoButton.hidden = true
+//        } else {
+//            nextEvoButton.hidden = false
+//            nextEvoButton.setImage(UIImage(named: pokemon.nextEvolutionId), forState: .Normal)
+//            var str = "Next Evolution: \(pokemon.nextEvolutionText)"
+//            if pokemon.nextEvolutionLevel != "" {
+//                str += " (Level \(pokemon.nextEvolutionLevel))"
+//                evoLabel.text = str
+//            }
+//        }
     }
     
     // TableView functions.
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return MovesCell()
-        // Cell identifier = MovesCell
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 // CHANGE
-    }
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        return 1
+//    }
+//    
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        return MovesCell()
+//        // Cell identifier = MovesCell
+//    }
+//    
+//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1 // CHANGE
+//    }
     
     // Go to the bio of the next evolution Pokemon when its button is tapped.
     @IBAction func nextEvoTapped(sender: AnyObject) {
@@ -95,25 +91,25 @@ class PokemonDetailVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func segmentSwitchTapped(sender: AnyObject) {
-        var bio: Bool = true
-        var moves: Bool = false
-        
-        if segmentedControl.selectedSegmentIndex == 0 {
-            // 'Bio' segment selected.
-            bio = false
-            moves = true
-            
-        } else if segmentedControl.selectedSegmentIndex == 1 {
-            // 'Moves' segment selected.
-            bio = true
-            moves = false
-        }
-        
-        // Hide the relevant views depending on which segment is selected.
-        bioSV.hidden = bio
-        tableView.hidden = moves
-    }
+//    @IBAction func segmentSwitchTapped(sender: AnyObject) {
+//        var bio: Bool = true
+//        var moves: Bool = false
+//        
+//        if segmentedControl.selectedSegmentIndex == 0 {
+//            // 'Bio' segment selected.
+//            bio = false
+//            moves = true
+//            
+//        } else if segmentedControl.selectedSegmentIndex == 1 {
+//            // 'Moves' segment selected.
+//            bio = true
+//            moves = false
+//        }
+//        
+//        // Hide the relevant views depending on which segment is selected.
+//        bioSV.hidden = bio
+//        tableView.hidden = moves
+//    }
 
 }
 

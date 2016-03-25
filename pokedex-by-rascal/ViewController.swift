@@ -18,7 +18,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var filteredPokemon = [Pokemon]()
     var musicPlayer: AVAudioPlayer!
     var inSearchMode = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,7 +90,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else {
             poke = pokemon[indexPath.row]
         }
-        performSegueWithIdentifier("PokemonDetailVC", sender: poke)
+        performSegueWithIdentifier("DetailSegue", sender: poke)
     }
     
     // Set the number of items (cells) in each section.
@@ -110,7 +110,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(105, 105)
     }
-
+    
     // Play/Stop the music when the music button is tapped.
     @IBAction func musicButtonTapped(sender: UIButton!) {
         if musicPlayer.playing {
@@ -143,10 +143,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // Pass the Pokemon details to the DetailsVC when the segue is triggered.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "PokemonDetailVC" {
-            if let detailsVC = segue.destinationViewController as? PokemonDetailVC {
+        if segue.identifier == "DetailSegue" {
+            if let pageVC = segue.destinationViewController as? DetailsPageVC {
                 if let poke = sender as? Pokemon {
-                    detailsVC.pokemon = poke
+                    pageVC.selectedPokemon = poke
                 }
             }
         }
