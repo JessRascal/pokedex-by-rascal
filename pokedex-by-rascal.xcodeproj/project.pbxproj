@@ -29,7 +29,7 @@
 		C86D970A1C994E6200C6F13A /* PokemonBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D97091C994E6200C6F13A /* PokemonBioVC.swift */; };
 		C86D970D1C99519100C6F13A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86D970B1C99519100C6F13A /* Main.storyboard */; };
 		C88DCFA21C9A0A6500744B10 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DCFA11C9A0A6500744B10 /* Constants.swift */; };
-		C88DCFA41C9B632F00744B10 /* MovesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DCFA31C9B632F00744B10 /* MovesCell.swift */; };
+		C88DCFA41C9B632F00744B10 /* MoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DCFA31C9B632F00744B10 /* MoveCell.swift */; };
 		C88DCFA61C9CA65400744B10 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88DCFA51C9CA65400744B10 /* Move.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +60,7 @@
 		C86D97091C994E6200C6F13A /* PokemonBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonBioVC.swift; sourceTree = "<group>"; };
 		C86D970C1C99519100C6F13A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C88DCFA11C9A0A6500744B10 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C88DCFA31C9B632F00744B10 /* MovesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesCell.swift; sourceTree = "<group>"; };
+		C88DCFA31C9B632F00744B10 /* MoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCell.swift; sourceTree = "<group>"; };
 		C88DCFA51C9CA65400744B10 /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,14 +93,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C808150B1CA5B95400E47442 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				C808150C1CA5B97400E47442 /* MusicPlayerSingleton.swift */,
-			);
-			name = Util;
-			sourceTree = "<group>";
-		};
 		C86D96DA1C98BA1C00C6F13A = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +114,6 @@
 		C86D96E51C98BA1C00C6F13A /* pokedex-by-rascal */ = {
 			isa = PBXGroup;
 			children = (
-				C808150B1CA5B95400E47442 /* Util */,
 				C86D96FA1C98BD5200C6F13A /* Model */,
 				C86D96FD1C98C24200C6F13A /* View */,
 				C86D97031C98C8DD00C6F13A /* Controller */,
@@ -138,8 +129,8 @@
 		C86D96FA1C98BD5200C6F13A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C86D96FB1C98BD6A00C6F13A /* Pokemon.swift */,
 				C88DCFA51C9CA65400744B10 /* Move.swift */,
+				C86D96FB1C98BD6A00C6F13A /* Pokemon.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -147,14 +138,14 @@
 		C86D96FD1C98C24200C6F13A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C88DCFA31C9B632F00744B10 /* MovesCell.swift */,
-				C86D96FE1C98C27300C6F13A /* PokeCell.swift */,
 				C86D96EF1C98BA1C00C6F13A /* LaunchScreen.storyboard */,
 				C86D970B1C99519100C6F13A /* Main.storyboard */,
 				C80815041CA58BCE00E47442 /* AppColours.swift */,
 				C80815081CA5AB5B00E47442 /* AudioPlayer.swift */,
 				C80815061CA5967600E47442 /* CircleImageWithBorder.swift */,
 				C808150E1CA5DF4800E47442 /* CircleView.swift */,
+				C88DCFA31C9B632F00744B10 /* MoveCell.swift */,
+				C86D96FE1C98C27300C6F13A /* PokeCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -162,8 +153,9 @@
 		C86D97021C98C8CF00C6F13A /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				C86D97001C98C8B800C6F13A /* csv.swift */,
 				C88DCFA11C9A0A6500744B10 /* Constants.swift */,
+				C86D97001C98C8B800C6F13A /* csv.swift */,
+				C808150C1CA5B97400E47442 /* MusicPlayerSingleton.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -323,7 +315,7 @@
 				C86D970A1C994E6200C6F13A /* PokemonBioVC.swift in Sources */,
 				C808150D1CA5B97400E47442 /* MusicPlayerSingleton.swift in Sources */,
 				C88DCFA61C9CA65400744B10 /* Move.swift in Sources */,
-				C88DCFA41C9B632F00744B10 /* MovesCell.swift in Sources */,
+				C88DCFA41C9B632F00744B10 /* MoveCell.swift in Sources */,
 				C80814FF1CA4971E00E47442 /* DetailsPageVC.swift in Sources */,
 				C80815091CA5AB5B00E47442 /* AudioPlayer.swift in Sources */,
 				C808150F1CA5DF4800E47442 /* CircleView.swift in Sources */,

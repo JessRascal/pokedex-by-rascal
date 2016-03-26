@@ -8,32 +8,42 @@
 
 import UIKit
 
-class PokemonMovesVC: UIViewController {
-
-    @IBOutlet weak var nameTest: UILabel!
+class PokemonMovesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var pokemon: Pokemon!
+    var moves: [Move]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        nameTest.text = pokemon.name
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        moves = pokemon.moves
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return moves.count
     }
-    */
-
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier("MoveCell") as? MoveCell {
+            let move = moves[indexPath.row]
+            cell.configureCell(move)
+            return cell
+        } else {
+            return MoveCell()
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
 }

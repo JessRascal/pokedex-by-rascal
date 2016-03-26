@@ -46,21 +46,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         parsePokemonCSV()
     }
     
-    // Play the background music.
-    //    func initAudio() {
-    //        let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!
-    //
-    //        do {
-    //            musicPlayer = try AVAudioPlayer(contentsOfURL: NSURL(string: path)!)
-    //            musicPlayer.prepareToPlay()
-    //            musicPlayer.numberOfLoops = -1
-    //            musicPlayer.volume = 0.3
-    //            musicPlayer.play()
-    //        } catch let err as NSError {
-    //            print(err.debugDescription)
-    //        }
-    //    }
-    
     // Parse the Pokemon CSV file, and add the data (name, and id) to the Pokemon array.
     func parsePokemonCSV() {
         let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv")!

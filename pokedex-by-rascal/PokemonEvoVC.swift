@@ -24,18 +24,12 @@ class PokemonEvoVC: UIViewController {
         currentEvoName.text = pokemon.name.capitalizedString
         let currentImage = UIImage(named: "\(pokemon.pokedexId)")
         currentEvoImage.image = currentImage
-        
-        // Call the UpdateUI function once the downloading from the API has completed.
-        pokemon.downloadPokemonDetails { () -> () in
-            // This will be called after download is done.
-            self.updateUI()
-        }
+        updateUI()
     }
     
     func updateUI() {
         if pokemon.nextEvolutionId == "" {
-            //            evoLabel.text = "No Evolutions"
-            nextEvoImage.hidden = true
+            nextEvoImage.hidden = true  // "NO EVOLUTIONS" IMAGE TO BE ADDED.
             nextEvoName.text = "No Further Evolution"
             nextEvoLevel.hidden = true
         } else {

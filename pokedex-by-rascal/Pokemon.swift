@@ -108,7 +108,7 @@ class Pokemon {
         _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
     }
     
-    // Retrieve the Pokemon data from the web APIs, and inform once complete using the closure.
+    // Retrieve the Pokemon data from the web API, and inform once complete using the closure.
     func downloadPokemonDetails(completed: DownloadComplete) {
         let url = NSURL(string: _pokemonUrl)!
         Alamofire.request(.GET, url).responseJSON { response in
@@ -161,7 +161,7 @@ class Pokemon {
                                     self._description = description
                                 }
                             }
-                            completed()
+                            //                            completed()
                         }
                         
                     } else {
@@ -193,35 +193,50 @@ class Pokemon {
                 // Get the Pokemon's moves.
                 if let movesArr = dict["moves"] as? [Dictionary<String, AnyObject>] where movesArr.count > 0 {
                     for x in 0..<movesArr.count {
+                        
+                        var moveName = ""
+                        var moveDesc = ""
+                        var moveAcc = ""
+                        var movePower = ""
+                        
                         if let url = movesArr[x]["resource_uri"] as? String {
-                            self._moves.append(Move(url: url))
+                            let nsurl = NSURL(string: "\(URL_BASE)\(url)")!
+                            Alamofire.request(.GET, nsurl).responseJSON { response in
+                                let result = response.result
+                                
+                                // Get the Move's details
+                                if let dict = result.value as? Dictionary<String, AnyObject> {
+                                    
+                                    if let name = dict["name"] as? String {
+                                        moveName = name
+                                    }
+                                    
+                                    if let desc = dict["description"] as? String {
+                                        moveDesc = desc
+                                    }
+                                    
+                                    if let accuracy = dict["accuracy"] as? Int {
+                                        moveAcc = "\(accuracy)"
+                                    }
+                                    
+                                    if let power = dict["power"] as? Int {
+                                        movePower = "\(power)"
+                                    }
+                                    
+                                    let newMove = Move(url: url, name: moveName, desc: moveDesc, acc: moveAcc, power: movePower)
+                                    self._moves.append(newMove)
+                                    
+                                } // dict end.
+                                // Only signify completion once all of the GETs have been completed for ALL of the moves.
+                                if x == movesArr.count - 1{
+                                    completed()
+                                }
+                            }
                         }
-                    }
+                    } // for loop end.
                 } // movesArr end.
                 
             } // dict end.
-            
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

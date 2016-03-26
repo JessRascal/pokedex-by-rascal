@@ -24,7 +24,11 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         
         // Set the starting VC.
         if let startingVC = pagedVCs.first {
-            setViewControllers([startingVC], direction: .Forward, animated: true, completion: nil)
+            // Dowload all the selected Pokemon's details, and then set the starting VC.
+            selectedPokemon.downloadPokemonDetails { () -> () in
+                self.setViewControllers([startingVC], direction: .Forward, animated: true, completion: nil)
+            }
+            
             if let navTitle = startingVC.restorationIdentifier {
                 setNavTitle(navTitle)
             }
