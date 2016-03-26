@@ -15,6 +15,7 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
     }()
     
     var selectedPokemon: Pokemon!
+    var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,20 +23,17 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         dataSource = self
         delegate = self
         
-        // Set the starting VC.
-        if let startingVC = pagedVCs.first {
-            // Dowload all the selected Pokemon's details, and then set the starting VC.
-            selectedPokemon.downloadPokemonDetails { () -> () in
-                self.setViewControllers([startingVC], direction: .Forward, animated: true, completion: nil)
-            }
-            
-            if let navTitle = startingVC.restorationIdentifier {
-                setNavTitle(navTitle)
-            }
+        // Set the background of the PageController's view.
+//        self.view.backgroundColor = UIColor.redColor()
+        view.backgroundColor = UIColor.clearColor()
+        if let bg = backgroundImage {
+            bg.image = UIImage(named: "bg")
+            bg.contentMode = .ScaleAspectFill
+            view.insertSubview(bg, atIndex: 0)
+//            view.addSubview(bg)
         }
         
         // Set the colours of the page control.
-        UIPageControl.appearance().backgroundColor = UIColor.appSecondaryColor()
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.appAccentColor()
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.appPrimaryColor()
         
@@ -43,6 +41,20 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         let musicIcon = MusicPlayerSingleton.globalMusicPlayer.musicIcon
         let audioButton = UIBarButtonItem(image: musicIcon, style: .Plain, target: self, action: #selector(triggerMusicBg))
         navigationItem.setRightBarButtonItem(audioButton, animated: true)
+        
+        // Set the starting VC.
+        if let startingVC = pagedVCs.first {
+            // Dowload all the selected Pokemon's details (including moves), and then set the starting VC.
+            selectedPokemon.downloadPokemonDetails { () -> () in
+                self.selectedPokemon.downloadMoveDetails { () -> () in
+                    self.setViewControllers([startingVC], direction: .Forward, animated: true, completion: nil)
+                }
+            }
+            
+            if let navTitle = startingVC.restorationIdentifier {
+                setNavTitle(navTitle)
+            }
+        }
     }
     
     func triggerMusicBg() {
