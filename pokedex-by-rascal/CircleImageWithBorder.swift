@@ -13,9 +13,11 @@ class CircleImageWithBorder: UIImageView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.frame.width / 2
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.appAccentColor().CGColor
+        backgroundColor = UIColor.appSecondaryColorTrans()
+        
+        layer.masksToBounds = true
+        layer.cornerRadius = self.frame.width / 2
+        layer.borderWidth = 1.0
+        layer.borderColor = UIColor.appAccentColor().CGColor
     }
 }

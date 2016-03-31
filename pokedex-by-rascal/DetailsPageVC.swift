@@ -15,7 +15,6 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
     }()
     
     var selectedPokemon: Pokemon!
-    var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +23,7 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         delegate = self
         
         // Set the background of the PageController's view.
-//        self.view.backgroundColor = UIColor.redColor()
-        view.backgroundColor = UIColor.clearColor()
-        if let bg = backgroundImage {
-            bg.image = UIImage(named: "bg")
-            bg.contentMode = .ScaleAspectFill
-            view.insertSubview(bg, atIndex: 0)
-//            view.addSubview(bg)
-        }
+        setBackground()
         
         // Set the colours of the page control.
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.appAccentColor()
@@ -153,5 +145,23 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
             return 0
         }
         return currentVCIndex
+    }
+    
+    func setBackground() {
+        // Create the background imageview.
+        let bgImage = UIImageView(image: UIImage(named: "bg"))
+        bgImage.contentMode = .ScaleAspectFill
+        bgImage.frame.size.width = self.view.frame.width
+        bgImage.frame.size.height = self.view.frame.height
+        
+        // Create the semi-transparent background view.
+        let bgView = UIView()
+        bgView.backgroundColor = UIColor.appSecondaryColorTrans()
+        bgView.frame.size.width = self.view.frame.width
+        bgView.frame.size.height = self.view.frame.height
+        
+        // Add both the the page controller view.
+        view.insertSubview(bgImage, atIndex: 0)
+        view.insertSubview(bgView, atIndex: 1)
     }
 }

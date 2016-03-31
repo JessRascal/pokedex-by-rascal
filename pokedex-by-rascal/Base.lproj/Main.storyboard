@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="sMn-cr-elL">
-                                <rect key="frame" x="0.0" y="44" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="agF-Mm-Hvc">
-                                <rect key="frame" x="20" y="64" width="560" height="452"/>
+                                <rect key="frame" x="20" y="44" width="560" height="492"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="adS-Bs-MwX">
                                     <size key="itemSize" width="105" height="126"/>
@@ -47,9 +47,8 @@
                                                     <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1p-QV-AEJ" userLabel="CellBg" customClass="CircleView" customModule="pokedex_by_rascal" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1p-QV-AEJ" userLabel="CellBg">
                                                     <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
-                                                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="297" translatesAutoresizingMaskIntoConstraints="NO" id="o7p-O9-2oV" customClass="CircleImageWithBorder" customModule="pokedex_by_rascal" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
@@ -88,14 +87,22 @@
                             <constraint firstItem="sMn-cr-elL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4sG-OY-2I8"/>
                             <constraint firstAttribute="trailing" secondItem="sMn-cr-elL" secondAttribute="trailing" id="E3L-7Y-bAz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sMn-cr-elL" secondAttribute="bottom" id="M4s-AH-DMH"/>
+                            <constraint firstItem="sMn-cr-elL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Tlz-q2-oVG"/>
                             <constraint firstAttribute="trailing" secondItem="agF-Mm-Hvc" secondAttribute="trailing" constant="20" id="UfL-BY-5Zi"/>
+                            <constraint firstItem="sMn-cr-elL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aPg-TL-O9I"/>
                             <constraint firstItem="RtK-CM-8nq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cTV-GI-0wg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="agF-Mm-Hvc" secondAttribute="bottom" constant="20" id="lzd-X8-vmm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="agF-Mm-Hvc" secondAttribute="bottom" id="lzd-X8-vmm"/>
                             <constraint firstItem="sMn-cr-elL" firstAttribute="top" secondItem="RtK-CM-8nq" secondAttribute="bottom" id="ode-a2-p6z"/>
                             <constraint firstAttribute="trailing" secondItem="RtK-CM-8nq" secondAttribute="trailing" id="qe4-mh-N1U"/>
-                            <constraint firstItem="agF-Mm-Hvc" firstAttribute="top" secondItem="RtK-CM-8nq" secondAttribute="bottom" constant="20" id="rNS-s7-uQF"/>
+                            <constraint firstItem="agF-Mm-Hvc" firstAttribute="top" secondItem="RtK-CM-8nq" secondAttribute="bottom" id="rNS-s7-uQF"/>
                             <constraint firstItem="agF-Mm-Hvc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="vv5-JR-0xw"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Tlz-q2-oVG"/>
+                                <exclude reference="ode-a2-p6z"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="EPs-8j-8dZ">
                         <barButtonItem key="rightBarButtonItem" image="musicOn" id="4V3-hw-1g0">
@@ -174,7 +181,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8cG-mN-rE3" secondAttribute="trailing" constant="20" id="3id-4j-3Nd"/>
                             <constraint firstAttribute="trailing" secondItem="GYW-Nf-oN0" secondAttribute="trailing" constant="20" id="DiL-3T-Wca"/>
@@ -269,7 +275,6 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WwL-n7-MhI" firstAttribute="top" secondItem="gWa-Eg-qgX" secondAttribute="bottom" constant="5" id="1qM-Mb-LHr"/>
                             <constraint firstItem="WwL-n7-MhI" firstAttribute="centerX" secondItem="Wwn-0g-G9L" secondAttribute="centerX" id="4xA-YQ-28a"/>
@@ -481,7 +486,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0tJ-Ks-6Na" firstAttribute="leading" secondItem="ki7-4k-I3h" secondAttribute="leading" constant="20" id="0aX-F1-VCZ"/>
                             <constraint firstItem="Aao-vK-ouh" firstAttribute="top" secondItem="oyE-KC-f7e" secondAttribute="bottom" constant="10" id="1ka-Em-nQJ"/>
