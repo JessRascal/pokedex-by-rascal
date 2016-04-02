@@ -14,6 +14,7 @@ class PokemonMovesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var pokemon: Pokemon!
     var moves: [Move]!
+    var sortedMoves: [Move]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +23,13 @@ class PokemonMovesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         
         moves = pokemon.moves
+        
+        // Sort the move list alphanumerically (by name).
+        sortedMoves = moves.sort { $0.name < $1.name }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moves.count
+        return sortedMoves.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -34,7 +38,7 @@ class PokemonMovesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("MoveCell") as? MoveCell {
-            let move = moves[indexPath.row]
+            let move = sortedMoves[indexPath.row]
             cell.configureCell(move)
             return cell
         } else {
@@ -46,7 +50,7 @@ class PokemonMovesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         // Forced on to the main queue due to some obscure bug.
         // For details, see - http://stackoverflow.com/questions/28509252/performseguewithidentifier-very-slow-when-segue-is-modal
         dispatch_async(dispatch_get_main_queue(),{
-            self.performSegueWithIdentifier("DisplayMoveDetails", sender: self.moves[indexPath.row])
+            self.performSegueWithIdentifier("DisplayMoveDetails", sender: self.sortedMoves[indexPath.row])
         })
     }
     

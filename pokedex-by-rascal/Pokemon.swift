@@ -225,7 +225,9 @@ class Pokemon {
                 if let dict = result.value as? Dictionary<String, AnyObject> {
                     
                     if let name = dict["name"] as? String {
-                        moveName = name
+                        // Remove the hyphens from the move's name.
+                        let formattedName = name.stringByReplacingOccurrencesOfString("-", withString: " ")
+                        moveName = formattedName.capitalizedString
                     }
                     
                     if let desc = dict["description"] as? String {
