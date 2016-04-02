@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
@@ -36,9 +37,13 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         
         // Set the starting VC.
         if let startingVC = pagedVCs.first {
+            // Display the activity indicator (spinner).
+            SwiftSpinner.show("Waking up \(selectedPokemon.name.capitalizedString)...")
             // Dowload all the selected Pokemon's details (including moves), and then set the starting VC.
             selectedPokemon.downloadPokemonDetails { () -> () in
                 self.selectedPokemon.downloadMoveDetails { () -> () in
+                    // Hide the activity indicator (spinner).
+                    SwiftSpinner.hide()
                     self.setViewControllers([startingVC], direction: .Forward, animated: true, completion: nil)
                 }
             }

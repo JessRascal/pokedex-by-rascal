@@ -14,10 +14,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E26E3147816A40DF77EB48E4317CEA3</key>
+		<key>181126E3AB1758D084F97CF37125F47E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40982F2BD5896AF5A65116BC60B9A2F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
