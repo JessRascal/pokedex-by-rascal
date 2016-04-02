@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "cancel-button-large.png",
+      "filename" : "cancel-button-empty.png",
       "scale" : "1x"
     },
     {

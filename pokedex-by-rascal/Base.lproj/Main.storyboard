@@ -336,13 +336,13 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5t0-10-GfQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5t0-10-GfQ" customClass="ModalCancelButton" customModule="pokedex_by_rascal" customModuleProvider="target">
                                         <rect key="frame" x="523" y="5" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="kES-OV-VN1"/>
                                             <constraint firstAttribute="width" constant="32" id="kJw-kQ-i0T"/>
                                         </constraints>
-                                        <state key="normal" image="cancel-button-large"/>
+                                        <state key="normal" image="cancel-button-empty"/>
                                         <connections>
                                             <action selector="cancelPressed:" destination="9Jw-Xd-4kH" eventType="touchUpInside" id="uyT-25-jzG"/>
                                         </connections>
@@ -740,7 +740,7 @@
         <image name="2" width="120" height="120"/>
         <image name="297" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
-        <image name="cancel-button-large" width="101" height="100"/>
+        <image name="cancel-button-empty" width="101" height="100"/>
         <image name="evoArrow" width="54" height="30"/>
         <image name="musicOn" width="21" height="22"/>
     </resources>
