@@ -7,12 +7,12 @@
 //
 
 import UIKit
-//import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var bgImage: UIImageView! // JUST FOR TESTING.
     
     var pokemon = [Pokemon]()
     var filteredPokemon = [Pokemon]()

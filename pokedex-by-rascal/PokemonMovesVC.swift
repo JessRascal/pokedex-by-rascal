@@ -43,7 +43,21 @@ class PokemonMovesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        // Forced on to the main queue due to some obscure bug.
+        // For details, see - http://stackoverflow.com/questions/28509252/performseguewithidentifier-very-slow-when-segue-is-modal
+        dispatch_async(dispatch_get_main_queue(),{
+            self.performSegueWithIdentifier("DisplayMoveDetails", sender: self.moves[indexPath.row])
+        })
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "DisplayMoveDetails" {
+            if let moveDetailVC = segue.destinationViewController as? MoveDetailsVC {
+                if let move = sender as? Move {
+                    moveDetailVC.selectedMove = move
+                }
+            }
+        }
     }
     
 }

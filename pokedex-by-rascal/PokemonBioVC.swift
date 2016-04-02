@@ -25,14 +25,14 @@ class PokemonBioVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = pokemon.name.capitalizedString
-        let image = UIImage(named: "\(pokemon.pokedexId)")
-        mainImage.image = image
         updateUI()
     }
     
     // Update the UI with the selected Pokemon's details.
     func updateUI() {
+        nameLabel.text = pokemon.name.capitalizedString
+        let image = UIImage(named: "\(pokemon.pokedexId)")
+        mainImage.image = image
         descriptionText.text = pokemon.description
         typeLabel.text = pokemon.type
         defenseLabel.text = pokemon.defense
@@ -41,7 +41,7 @@ class PokemonBioVC: UIViewController {
         weightLabel.text = pokemon.weight
         attackLabel.text = pokemon.attack
         
-        // Set the description label to initially display starting at the top of its scroll.
+        // Set the description label to initially display starting at the top of its scroll. DOESN"T CURRENTLY WORK????????
         descriptionText.setContentOffset(CGPointZero, animated: false)
     }
 }

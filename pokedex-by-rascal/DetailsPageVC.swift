@@ -11,7 +11,7 @@ import UIKit
 class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     private(set) lazy var pagedVCs: [UIViewController] = {
-        return [self.getVC("Bio"), self.getVC("Evo"), self.getVC("Moves")]
+        return [self.getVC("Bio"), self.getVC("Evolutions"), self.getVC("Moves")]
     }()
     
     var selectedPokemon: Pokemon!
@@ -67,11 +67,11 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         if let bioVC = currentVC as? PokemonBioVC {
             bioVC.pokemon = selectedPokemon
         }
-        if let evoBC = currentVC as? PokemonEvoVC {
-            evoBC.pokemon = selectedPokemon
+        if let evoVC = currentVC as? PokemonEvoVC {
+            evoVC.pokemon = selectedPokemon
         }
-        if let movesBC = currentVC as? PokemonMovesVC {
-            movesBC.pokemon = selectedPokemon
+        if let movesVC = currentVC as? PokemonMovesVC {
+            movesVC.pokemon = selectedPokemon
         }
     }
     

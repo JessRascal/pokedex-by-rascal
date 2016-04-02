@@ -21,13 +21,14 @@ class PokemonEvoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentEvoName.text = pokemon.name.capitalizedString
-        let currentImage = UIImage(named: "\(pokemon.pokedexId)")
-        currentEvoImage.image = currentImage
         updateUI()
     }
     
     func updateUI() {
+        currentEvoName.text = pokemon.name.capitalizedString
+        let currentImage = UIImage(named: "\(pokemon.pokedexId)")
+        currentEvoImage.image = currentImage
+        
         if pokemon.nextEvolutionId == "" {
             nextEvoImage.hidden = true  // "NO EVOLUTIONS" IMAGE TO BE ADDED.
             nextEvoName.text = "No Further Evolution"
