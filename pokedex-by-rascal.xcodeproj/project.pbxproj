@@ -18,6 +18,7 @@
 		C8101C791CAF20E50010204C /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8101C781CAF20E50010204C /* ModalView.swift */; };
 		C8101C991CAFEC580010204C /* ModalCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8101C981CAFEC580010204C /* ModalCancelButton.swift */; };
 		C8101C9B1CB392B00010204C /* MovesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8101C9A1CB392B00010204C /* MovesTable.swift */; };
+		C8101C9D1CB43C170010204C /* PokemonSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8101C9C1CB43C170010204C /* PokemonSearchBar.swift */; };
 		C850A4771CADC83200A88459 /* MoveDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850A4761CADC83200A88459 /* MoveDetailsVC.swift */; };
 		C86D96E71C98BA1C00C6F13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D96E61C98BA1C00C6F13A /* AppDelegate.swift */; };
 		C86D96E91C98BA1C00C6F13A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D96E81C98BA1C00C6F13A /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		C8101C781CAF20E50010204C /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		C8101C981CAFEC580010204C /* ModalCancelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalCancelButton.swift; sourceTree = "<group>"; };
 		C8101C9A1CB392B00010204C /* MovesTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesTable.swift; sourceTree = "<group>"; };
+		C8101C9C1CB43C170010204C /* PokemonSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonSearchBar.swift; sourceTree = "<group>"; };
 		C850A4761CADC83200A88459 /* MoveDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveDetailsVC.swift; sourceTree = "<group>"; };
 		C86D96E31C98BA1C00C6F13A /* pokedex-by-rascal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokedex-by-rascal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86D96E61C98BA1C00C6F13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				C86D96FE1C98C27300C6F13A /* PokeCell.swift */,
 				C8101C981CAFEC580010204C /* ModalCancelButton.swift */,
 				C8101C9A1CB392B00010204C /* MovesTable.swift */,
+				C8101C9C1CB43C170010204C /* PokemonSearchBar.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				C80815051CA58BCE00E47442 /* AppColours.swift in Sources */,
 				C86D96E91C98BA1C00C6F13A /* ViewController.swift in Sources */,
 				C80815071CA5967600E47442 /* CircleImageWithBorder.swift in Sources */,
+				C8101C9D1CB43C170010204C /* PokemonSearchBar.swift in Sources */,
 				C86D96E71C98BA1C00C6F13A /* AppDelegate.swift in Sources */,
 				C86D970A1C994E6200C6F13A /* PokemonBioVC.swift in Sources */,
 				C8101C791CAF20E50010204C /* ModalView.swift in Sources */,

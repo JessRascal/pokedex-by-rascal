@@ -13,7 +13,7 @@ class ModalCancelButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.setImage(UIImage(named: "cancel-button-empty"), forState: .Normal)
-        self.setImage(UIImage(named: "cancel-button-filled"), forState: .Highlighted)
+        setImage(UIImage(named: "cancel-button-empty"), forState: .Normal)
+        setImage(UIImage(named: "cancel-button-filled"), forState: .Highlighted)
     }
 }

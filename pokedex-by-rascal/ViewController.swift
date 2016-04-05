@@ -12,7 +12,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var bgImage: UIImageView! // JUST FOR TESTING.
     
     var pokemon = [Pokemon]()
     var filteredPokemon = [Pokemon]()
@@ -49,7 +48,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // Parse the Pokemon CSV file, and add the data (name, and id) to the Pokemon array.
     func parsePokemonCSV() {
         let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv")!
-        
         do {
             let csv = try CSV(contentsOfURL: path)
             let rows = csv.rows
@@ -83,12 +81,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // Perform the appropriate segue when a cell is tapped.
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
         let poke: Pokemon!
         if inSearchMode {
             poke = filteredPokemon[indexPath.row]
         } else {
             poke = pokemon[indexPath.row]
+        }
+        // Remove focus from the search bar if it is empty.
+        if searchBar.text == nil || searchBar.text == "" {
+            searchBar.resignFirstResponder()
         }
         performSegueWithIdentifier("DetailSegue", sender: poke)
     }
@@ -108,7 +109,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // Set the size of the collection view cells.
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(105, 126)
+        return CGSizeMake(105, 129)
     }
     
     // Play/Stop the music when the music button is tapped.
@@ -120,8 +121,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     // Perform a "live" search when the user enters data in to the search bar.
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        view.endEditing(true)
+    //    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    //        view.endEditing(true)
+    //    }
+    
+    // Detect when the search bar becomes active.
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        if let sb = searchBar as? PokemonSearchBar {
+            sb.beingEdited(true)
+        }
+    }
+    
+    // Detect when the search bar stops being active.
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        if let sb = searchBar as? PokemonSearchBar {
+            sb.beingEdited(false)
+        }
     }
     
     // Filter the items in the collection view based on the user's input in the search bar.
