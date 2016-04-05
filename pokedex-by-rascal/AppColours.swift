@@ -15,12 +15,17 @@ extension UIColor {
         return UIColor(red: 240/255, green: 0/255, blue: 0/255, alpha: 1)
     }
     
+    // Semi-transparent Primary App Colour - Red (#f00000) with an alpha value of 0.5.
+    class func appPrimaryColorTrans() -> UIColor {
+        return UIColor(red: 240/255, green: 0/255, blue: 0/255, alpha: 0.5)
+    }
+    
     // Secondary App Colour - Very Light Grey/White (#f0f0f0).
     class func appSecondaryColor() -> UIColor {
         return UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
     }
     
-    // Semi-transparent secondary App Colour - Very Light Grey/White (#f0f0f0) with aplha of 0.5.
+    // Semi-transparent Secondary App Colour - Very Light Grey/White (#f0f0f0) with an aplha value of 0.5.
     class func appSecondaryColorTrans() -> UIColor {
         return UIColor.appSecondaryColor().colorWithAlphaComponent(0.5)
     }

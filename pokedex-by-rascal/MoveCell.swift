@@ -15,7 +15,9 @@ class MoveCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.selectionStyle = UITableViewCellSelectionStyle.None
+        selectionStyle = UITableViewCellSelectionStyle.None
+        backgroundColor = UIColor.appSecondaryColorTrans()
+        moveName.textColor = UIColor.appAccentColor()
     }
     
     func configureCell(move: Move) {

@@ -10,7 +10,7 @@ import UIKit
 
 class PokemonMovesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: MovesTable!
     
     var pokemon: Pokemon!
     var moves: [Move]!
@@ -26,6 +26,11 @@ class PokemonMovesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // Sort the move list alphanumerically (by name).
         sortedMoves = moves.sort { $0.name < $1.name }
+        
+        // Set the background image of the tableView.
+//        if let pokemonImage = UIImage(named: "\(pokemon.pokedexId)") {
+//            tableView.setBackground(pokemonImage)
+//        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
