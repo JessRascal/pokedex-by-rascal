@@ -19,6 +19,7 @@
 		C8101C991CAFEC580010204C /* ModalCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8101C981CAFEC580010204C /* ModalCancelButton.swift */; };
 		C8101C9B1CB392B00010204C /* MovesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8101C9A1CB392B00010204C /* MovesTable.swift */; };
 		C8101C9D1CB43C170010204C /* PokemonSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8101C9C1CB43C170010204C /* PokemonSearchBar.swift */; };
+		C8101C9F1CB463250010204C /* Orbitron-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8101C9E1CB463250010204C /* Orbitron-Regular.ttf */; };
 		C850A4771CADC83200A88459 /* MoveDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C850A4761CADC83200A88459 /* MoveDetailsVC.swift */; };
 		C86D96E71C98BA1C00C6F13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D96E61C98BA1C00C6F13A /* AppDelegate.swift */; };
 		C86D96E91C98BA1C00C6F13A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D96E81C98BA1C00C6F13A /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		C8101C981CAFEC580010204C /* ModalCancelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalCancelButton.swift; sourceTree = "<group>"; };
 		C8101C9A1CB392B00010204C /* MovesTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesTable.swift; sourceTree = "<group>"; };
 		C8101C9C1CB43C170010204C /* PokemonSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonSearchBar.swift; sourceTree = "<group>"; };
+		C8101C9E1CB463250010204C /* Orbitron-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Orbitron-Regular.ttf"; sourceTree = "<group>"; };
 		C850A4761CADC83200A88459 /* MoveDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveDetailsVC.swift; sourceTree = "<group>"; };
 		C86D96E31C98BA1C00C6F13A /* pokedex-by-rascal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokedex-by-rascal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86D96E61C98BA1C00C6F13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				C86D97071C98CEEC00C6F13A /* music.mp3 */,
+				C8101C9E1CB463250010204C /* Orbitron-Regular.ttf */,
 				C86D97051C98CCAD00C6F13A /* PokemonFont.ttf */,
 				C86D96F81C98BC6B00C6F13A /* pokemon.csv */,
 			);
@@ -261,6 +264,7 @@
 				C86D970D1C99519100C6F13A /* Main.storyboard in Resources */,
 				C86D96F91C98BC6B00C6F13A /* pokemon.csv in Resources */,
 				C86D97061C98CCAD00C6F13A /* PokemonFont.ttf in Resources */,
+				C8101C9F1CB463250010204C /* Orbitron-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

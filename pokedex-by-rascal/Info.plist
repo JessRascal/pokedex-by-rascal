@@ -29,6 +29,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Orbitron-Regular.ttf</string>
 		<string>PokemonFont.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

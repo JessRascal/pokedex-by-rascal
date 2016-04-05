@@ -21,16 +21,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         
         // Set the title of the Nav Bar to be the App Logo.
-        //        let appLogo = UIImage(named: "FavouriteFilmsLogo")
-        //        let imageView = UIImageView(image: appLogo)
-        //        imageView.contentMode = .ScaleAspectFit
-        //        imageView.bounds.size.height = 30
-        //        navigationItem.titleView = imageView
-        //        navigationItem.titleView!.contentMode = .ScaleAspectFit
-        
-        // Blank button added to the left of the Nav Bar to keep the logo centred (a bit hacky, but it works).
-        //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: self, action: nil)
-        //        navigationItem.leftBarButtonItem?.enabled = false
+        setNavTitle()
         
         // Set the text of the default 'Back' button (no text, just the arrow).
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
@@ -61,6 +52,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } catch let err as NSError {
             print(err.debugDescription)
         }
+    }
+    
+    func setNavTitle() {
+        let imageView = UIImageView(image: UIImage(named: "p-dex-logo"))
+        imageView.contentMode = .ScaleAspectFit
+        imageView.bounds.size.height = 30
+        navigationItem.titleView = imageView
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
