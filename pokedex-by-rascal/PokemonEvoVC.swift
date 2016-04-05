@@ -30,8 +30,8 @@ class PokemonEvoVC: UIViewController {
         currentEvoImage.image = currentImage
         
         if pokemon.nextEvolutionId == "" {
-            nextEvoImage.hidden = true  // "NO EVOLUTIONS" IMAGE TO BE ADDED.
-            nextEvoName.text = "No Further Evolution"
+            nextEvoImage.image = UIImage(named: "evoPlaceholder")
+            nextEvoName.text = ""
             nextEvoLevel.hidden = true
         } else {
             nextEvoImage.hidden = false
