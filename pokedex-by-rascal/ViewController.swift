@@ -107,7 +107,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // Set the size of the collection view cells.
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(105, 129)
+        return CGSizeMake(100, 116)
     }
     
     // Play/Stop the music when the music button is tapped.
@@ -118,10 +118,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    // Perform a "live" search when the user enters data in to the search bar.
-    //    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-    //        view.endEditing(true)
-    //    }
+    // Dismiss the keyboard when the 'Done' button is pressed when using the search bar.
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
     
     // Detect when the search bar becomes active.
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {

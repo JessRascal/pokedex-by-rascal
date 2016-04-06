@@ -22,25 +22,29 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="sMn-cr-elL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for Pokemon..." translatesAutoresizingMaskIntoConstraints="NO" id="RtK-CM-8nq" customClass="PokemonSearchBar" customModule="pokedex_by_rascal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="agF-Mm-Hvc">
-                                <rect key="frame" x="20" y="108" width="560" height="492"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="adS-Bs-MwX">
-                                    <size key="itemSize" width="105" height="131"/>
+                                    <size key="itemSize" width="100" height="116"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="OWh-km-FHV" customClass="PokeCell" customModule="pokedex_by_rascal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="131"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="131"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kvk-3k-7Vg">
-                                                    <rect key="frame" x="0.0" y="110" width="105" height="21"/>
+                                                    <rect key="frame" x="5" y="95" width="90" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Ras-KS-qJ8"/>
                                                     </constraints>
@@ -49,19 +53,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="297" translatesAutoresizingMaskIntoConstraints="NO" id="o7p-O9-2oV" customClass="CircleImageWithBorder" customModule="pokedex_by_rascal" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="3" width="105" height="107"/>
+                                                    <rect key="frame" x="5" y="5" width="90" height="90"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="o7p-O9-2oV" firstAttribute="leading" secondItem="OWh-km-FHV" secondAttribute="leading" id="437-vk-1BQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Kvk-3k-7Vg" secondAttribute="trailing" id="ABQ-iE-CaU"/>
+                                            <constraint firstItem="o7p-O9-2oV" firstAttribute="leading" secondItem="OWh-km-FHV" secondAttribute="leading" constant="5" id="437-vk-1BQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kvk-3k-7Vg" secondAttribute="trailing" constant="5" id="ABQ-iE-CaU"/>
                                             <constraint firstAttribute="bottom" secondItem="Kvk-3k-7Vg" secondAttribute="bottom" id="DlJ-ka-NmX"/>
-                                            <constraint firstItem="o7p-O9-2oV" firstAttribute="top" secondItem="OWh-km-FHV" secondAttribute="top" constant="3" id="GRv-Lh-bpT"/>
+                                            <constraint firstItem="o7p-O9-2oV" firstAttribute="top" secondItem="OWh-km-FHV" secondAttribute="top" constant="5" id="GRv-Lh-bpT"/>
                                             <constraint firstItem="Kvk-3k-7Vg" firstAttribute="top" secondItem="o7p-O9-2oV" secondAttribute="bottom" id="KOc-20-5Jt"/>
-                                            <constraint firstItem="Kvk-3k-7Vg" firstAttribute="leading" secondItem="OWh-km-FHV" secondAttribute="leading" id="PbA-rz-eyw"/>
-                                            <constraint firstAttribute="trailing" secondItem="o7p-O9-2oV" secondAttribute="trailing" id="fcR-kR-U5E"/>
+                                            <constraint firstItem="Kvk-3k-7Vg" firstAttribute="leading" secondItem="OWh-km-FHV" secondAttribute="leading" constant="5" id="PbA-rz-eyw"/>
+                                            <constraint firstAttribute="trailing" secondItem="o7p-O9-2oV" secondAttribute="trailing" constant="5" id="fcR-kR-U5E"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="nameLabel" destination="Kvk-3k-7Vg" id="NzG-EO-ZMi"/>
@@ -70,10 +74,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for Pokemon..." translatesAutoresizingMaskIntoConstraints="NO" id="RtK-CM-8nq" customClass="PokemonSearchBar" customModule="pokedex_by_rascal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -82,12 +82,12 @@
                             <constraint firstItem="sMn-cr-elL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5PF-PK-mwX"/>
                             <constraint firstAttribute="trailing" secondItem="sMn-cr-elL" secondAttribute="trailing" id="E3L-7Y-bAz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sMn-cr-elL" secondAttribute="bottom" id="M4s-AH-DMH"/>
-                            <constraint firstAttribute="trailing" secondItem="agF-Mm-Hvc" secondAttribute="trailing" constant="20" id="UfL-BY-5Zi"/>
+                            <constraint firstAttribute="trailing" secondItem="agF-Mm-Hvc" secondAttribute="trailing" id="UfL-BY-5Zi"/>
                             <constraint firstItem="RtK-CM-8nq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cTV-GI-0wg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="agF-Mm-Hvc" secondAttribute="bottom" id="lzd-X8-vmm"/>
                             <constraint firstAttribute="trailing" secondItem="RtK-CM-8nq" secondAttribute="trailing" id="qe4-mh-N1U"/>
                             <constraint firstItem="agF-Mm-Hvc" firstAttribute="top" secondItem="RtK-CM-8nq" secondAttribute="bottom" id="rNS-s7-uQF"/>
-                            <constraint firstItem="agF-Mm-Hvc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="vv5-JR-0xw"/>
+                            <constraint firstItem="agF-Mm-Hvc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vv5-JR-0xw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EPs-8j-8dZ">
@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1384" y="475"/>
+            <point key="canvasLocation" x="1332" y="475"/>
         </scene>
         <!--Details PageVC-->
         <scene sceneID="yGX-0g-b05">
