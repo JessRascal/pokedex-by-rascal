@@ -16,8 +16,13 @@ class CircleImageWithBorder: UIImageView {
         backgroundColor = UIColor.appSecondaryColorTrans()
         
         layer.masksToBounds = true
-        layer.cornerRadius = self.frame.width / 2
+//        layer.cornerRadius = self.frame.width / 2
         layer.borderWidth = 1.0
         layer.borderColor = UIColor.appAccentColor().CGColor
+    }
+    
+    override func layoutSubviews() {
+        // Defined corner radius here so that it's set after the dynamic size of the image has been set.
+        layer.cornerRadius = self.frame.width / 2
     }
 }

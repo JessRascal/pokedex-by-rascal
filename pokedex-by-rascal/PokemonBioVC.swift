@@ -40,9 +40,6 @@ class PokemonBioVC: UIViewController {
         pokedexLabel.text = "\(pokemon.pokedexId)"
         weightLabel.text = pokemon.weight
         attackLabel.text = pokemon.attack
-        
-        // Set the description label to initially display starting at the top of its scroll. DOESN"T CURRENTLY WORK????????
-        descriptionText.setContentOffset(CGPointZero, animated: false)
     }
 }
 
