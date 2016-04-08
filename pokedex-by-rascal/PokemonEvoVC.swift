@@ -15,6 +15,7 @@ class PokemonEvoVC: UIViewController {
     @IBOutlet weak var nextEvoImage: CircleImageWithBorder!
     @IBOutlet weak var nextEvoName: UILabel!
     @IBOutlet weak var nextEvoLevel: UILabel!
+    @IBOutlet weak var spacingLabel: UILabel!
     
     var pokemon: Pokemon!
     
@@ -31,14 +32,18 @@ class PokemonEvoVC: UIViewController {
         
         if pokemon.nextEvolutionId == "" {
             nextEvoImage.image = UIImage(named: "evoPlaceholder")
-            nextEvoName.text = ""
+            nextEvoName.text = " "
             nextEvoLevel.hidden = true
+            spacingLabel.hidden = true
         } else {
-            nextEvoImage.hidden = false
             nextEvoImage.image = UIImage(named: pokemon.nextEvolutionId)
             nextEvoName.text = pokemon.nextEvolutionText
             if pokemon.nextEvolutionLevel != "" {
                 nextEvoLevel.text = "Level \(pokemon.nextEvolutionLevel)"
+                spacingLabel.text = " "
+            } else {
+                nextEvoLevel.text = " "
+                spacingLabel.text = " "
             }
         }
     }
