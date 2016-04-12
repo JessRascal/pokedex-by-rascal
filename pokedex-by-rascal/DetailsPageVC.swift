@@ -132,6 +132,7 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         return pagedVCs[nextIndex]
     }
     
+    // Set the navigation bar title when the page is changed.
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if let currentVC = viewControllers?.first {
             if let navTitle = currentVC.restorationIdentifier {
@@ -152,6 +153,7 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         return currentVCIndex
     }
     
+    // Set the background image.
     func setBackground() {
         // Create the background imageview.
         let bgImage = UIImageView(image: UIImage(named: "bg"))
@@ -169,4 +171,5 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         view.insertSubview(bgImage, atIndex: 0)
         view.insertSubview(bgView, atIndex: 1)
     }
+    
 }

@@ -195,6 +195,8 @@ class Pokemon {
                     }
                 } // evolutions end.
                 
+                // Clear out exsiting move URLs (avoid duplicates).
+                self._moveUrls = []
                 // Get the URLs of the Pokemon's moves.
                 if let movesArr = dict["moves"] as? [Dictionary<String, AnyObject>] where movesArr.count > 0 {
                     for x in 0..<movesArr.count {
@@ -208,6 +210,8 @@ class Pokemon {
     }
     
     func downloadMoveDetails(completed: MovesDownloadComplete) {
+        // Clear out existing move data (avoid duplicates).
+        self._moves = []
         // Get the Pokemon's move(s) data.
         for x in 0..<_moveUrls.count {
             

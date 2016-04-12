@@ -31,6 +31,7 @@ class PokemonMovesVC: UIViewController, UITableViewDataSource, UITableViewDelega
 //        if let pokemonImage = UIImage(named: "\(pokemon.pokedexId)") {
 //            tableView.setBackground(pokemonImage)
 //        }
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
