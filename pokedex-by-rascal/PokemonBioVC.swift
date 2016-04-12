@@ -41,6 +41,11 @@ class PokemonBioVC: UIViewController {
         weightLabel.text = pokemon.weight
         attackLabel.text = pokemon.attack
     }
+    
+    // Ensures the description UITextView starts off scrolled to the top.
+    override func viewDidLayoutSubviews() {
+        self.descriptionText.setContentOffset(CGPointZero, animated: false)
+    }
 }
 
 

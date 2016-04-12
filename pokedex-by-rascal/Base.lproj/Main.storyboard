@@ -241,7 +241,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qFZ-gU-hpP" userLabel="PowerValue">
-                                                                <rect key="frame" x="0.0" y="23" width="230" height="22"/>
+                                                                <rect key="frame" x="0.0" y="22" width="230" height="23"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -258,7 +258,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rcL-4c-wC8" userLabel="AccuracyValue">
-                                                                <rect key="frame" x="0.0" y="23" width="230" height="22"/>
+                                                                <rect key="frame" x="0.0" y="22" width="230" height="23"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -270,7 +270,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="BmX-0m-9Zf"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="sfU-KB-SXd" userLabel="DescSV">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sfU-KB-SXd" userLabel="DescSV">
                                                 <rect key="frame" x="0.0" y="55" width="520" height="359"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FoH-WS-BL6" userLabel="DescLabel">
@@ -282,17 +282,21 @@
                                                         <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w7-Ya-X6Q" userLabel="DescView">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w7-Ya-X6Q" userLabel="DescView">
                                                         <rect key="frame" x="0.0" y="25" width="520" height="334"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="2w7-Ya-X6Q" secondAttribute="trailing" id="75l-Qk-Vba"/>
+                                                    <constraint firstItem="2w7-Ya-X6Q" firstAttribute="top" secondItem="FoH-WS-BL6" secondAttribute="bottom" id="9tn-Ze-jKz"/>
                                                     <constraint firstAttribute="height" constant="70" id="cFU-tW-wRG"/>
+                                                    <constraint firstItem="2w7-Ya-X6Q" firstAttribute="leading" secondItem="sfU-KB-SXd" secondAttribute="leading" id="jHq-Ct-tMv"/>
                                                     <constraint firstAttribute="bottom" secondItem="2w7-Ya-X6Q" secondAttribute="bottom" id="o20-g7-asB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2w7-Ya-X6Q" secondAttribute="bottom" id="sBD-x9-Xwz"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
