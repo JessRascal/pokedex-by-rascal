@@ -490,15 +490,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="270" verticalCompressionResistancePriority="770" text="Bulbasaur" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="oyE-KC-f7e" userLabel="NameLabel">
-                                <rect key="frame" x="247" y="285" width="107" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                </variation>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-vK-ouh" userLabel="TopLine">
                                 <rect key="frame" x="20" y="334" width="560" height="1"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
@@ -517,6 +508,14 @@
                                 <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="qzl-2f-b35"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 </variation>
@@ -542,6 +541,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.94117647058823528" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         </variation>
@@ -551,6 +553,9 @@
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                         </variation>
@@ -565,6 +570,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         </variation>
@@ -574,6 +582,9 @@
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                         </variation>
@@ -593,6 +604,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         </variation>
@@ -602,6 +616,9 @@
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                         </variation>
@@ -616,6 +633,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         </variation>
@@ -625,6 +645,9 @@
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                         </variation>
@@ -644,6 +667,10 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="255" height="28"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         </variation>
@@ -653,6 +680,10 @@
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                            <rect key="frame" x="0.0" y="28" width="255" height="28"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                         </variation>
@@ -667,6 +698,10 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="255" height="28"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         </variation>
@@ -676,6 +711,10 @@
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                            <rect key="frame" x="0.0" y="28" width="255" height="28"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                         </variation>
@@ -685,6 +724,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <variation key="heightClass=compact" spacing="5"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="240" verticalCompressionResistancePriority="740" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="DLU-Rh-2nE" userLabel="BioImage" customClass="CircleImageWithBorder" customModule="pokedex_by_rascal" customModuleProvider="target">
                                 <rect key="frame" x="210" y="90" width="180" height="180"/>
@@ -693,33 +733,178 @@
                                     <constraint firstAttribute="width" secondItem="DLU-Rh-2nE" secondAttribute="height" multiplier="1:1" id="66k-g7-lST"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="270" verticalCompressionResistancePriority="770" text="Bulbasaur" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="oyE-KC-f7e" userLabel="NameLabel">
+                                <rect key="frame" x="247" y="285" width="107" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                    <rect key="frame" x="468" y="74" width="116" height="32"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="0tJ-Ks-6Na" firstAttribute="leading" secondItem="ki7-4k-I3h" secondAttribute="leading" constant="20" id="0aX-F1-VCZ"/>
+                            <constraint firstItem="DLU-Rh-2nE" firstAttribute="centerX" secondItem="ki7-4k-I3h" secondAttribute="centerX" multiplier="0.4" id="3xO-J9-ObU"/>
                             <constraint firstAttribute="trailing" secondItem="Aao-vK-ouh" secondAttribute="trailing" constant="20" id="Cim-Ea-DUt"/>
+                            <constraint firstItem="oyE-KC-f7e" firstAttribute="top" secondItem="LPA-dX-ccD" secondAttribute="bottom" constant="10" id="Hgg-ys-1WX"/>
+                            <constraint firstItem="AHd-Tx-cSn" firstAttribute="top" secondItem="DLU-Rh-2nE" secondAttribute="bottom" constant="5" id="M46-TW-KPD"/>
                             <constraint firstItem="DLU-Rh-2nE" firstAttribute="height" secondItem="ki7-4k-I3h" secondAttribute="height" multiplier="0.3" id="MX4-Lw-y5t"/>
                             <constraint firstItem="oyE-KC-f7e" firstAttribute="centerY" secondItem="ki7-4k-I3h" secondAttribute="centerY" multiplier="1.1" id="Nb3-6w-Kh4"/>
+                            <constraint firstItem="Aao-vK-ouh" firstAttribute="top" secondItem="LPA-dX-ccD" secondAttribute="bottom" constant="10" id="NkV-QX-Rzi"/>
                             <constraint firstItem="DLU-Rh-2nE" firstAttribute="centerX" secondItem="ki7-4k-I3h" secondAttribute="centerX" id="OQ2-KE-Hmz"/>
+                            <constraint firstItem="oyE-KC-f7e" firstAttribute="centerX" secondItem="AHd-Tx-cSn" secondAttribute="centerX" id="Pd9-ew-ZFZ"/>
                             <constraint firstItem="eh1-3l-5Nh" firstAttribute="leading" secondItem="ki7-4k-I3h" secondAttribute="leading" constant="20" id="RlJ-kA-x4W"/>
+                            <constraint firstItem="AHd-Tx-cSn" firstAttribute="leading" secondItem="DLU-Rh-2nE" secondAttribute="trailing" constant="20" id="Ru9-8f-HoS">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="AHd-Tx-cSn" firstAttribute="top" secondItem="eh1-3l-5Nh" secondAttribute="bottom" constant="10" id="TP5-GN-4gL"/>
+                            <constraint firstItem="Aao-vK-ouh" firstAttribute="leading" secondItem="ki7-4k-I3h" secondAttribute="leading" constant="20" id="UQZ-NM-8Kd"/>
                             <constraint firstAttribute="bottom" secondItem="AHd-Tx-cSn" secondAttribute="bottom" constant="10" id="UoN-R6-cZw"/>
+                            <constraint firstItem="AHd-Tx-cSn" firstAttribute="leading" secondItem="0tJ-Ks-6Na" secondAttribute="leading" id="VfX-ys-APX"/>
+                            <constraint firstItem="DLU-Rh-2nE" firstAttribute="top" secondItem="oyE-KC-f7e" secondAttribute="bottom" constant="20" id="XKu-1H-LJk"/>
+                            <constraint firstItem="DLU-Rh-2nE" firstAttribute="leading" secondItem="ki7-4k-I3h" secondAttribute="leading" constant="20" id="XKx-TY-sJo">
+                                <variation key="heightClass=compact" constant="30"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="eh1-3l-5Nh" secondAttribute="trailing" constant="20" id="Xhf-qf-gIj"/>
+                            <constraint firstItem="oyE-KC-f7e" firstAttribute="leading" secondItem="DLU-Rh-2nE" secondAttribute="trailing" constant="10" id="Xjd-zf-AM4">
+                                <variation key="heightClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="AHd-Tx-cSn" firstAttribute="top" secondItem="oyE-KC-f7e" secondAttribute="bottom" constant="20" id="Yyc-B8-Gkj">
+                                <variation key="heightClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="oyE-KC-f7e" firstAttribute="top" secondItem="LPA-dX-ccD" secondAttribute="bottom" constant="10" id="aIB-CP-7Im">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="Aao-vK-ouh" firstAttribute="top" secondItem="DLU-Rh-2nE" secondAttribute="bottom" constant="20" id="aJA-V9-I5m">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="oyE-KC-f7e" firstAttribute="centerX" secondItem="ki7-4k-I3h" secondAttribute="centerX" id="ae4-Xc-bvs"/>
+                            <constraint firstItem="eh1-3l-5Nh" firstAttribute="leading" secondItem="DLU-Rh-2nE" secondAttribute="trailing" constant="10" id="bYN-NL-R1w">
+                                <variation key="heightClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="AHd-Tx-cSn" secondAttribute="trailing" constant="30" id="byf-pX-8Td"/>
+                            <constraint firstItem="DLU-Rh-2nE" firstAttribute="centerY" secondItem="ki7-4k-I3h" secondAttribute="centerY" multiplier="0.9" id="c8N-Mc-2XQ"/>
                             <constraint firstItem="AHd-Tx-cSn" firstAttribute="leading" secondItem="ki7-4k-I3h" secondAttribute="leading" constant="30" id="cDj-IU-vBr"/>
+                            <constraint firstItem="AHd-Tx-cSn" firstAttribute="bottom" secondItem="DLU-Rh-2nE" secondAttribute="bottom" constant="20" id="cTR-fB-oRu"/>
+                            <constraint firstItem="0tJ-Ks-6Na" firstAttribute="leading" secondItem="DLU-Rh-2nE" secondAttribute="trailing" constant="10" id="cW3-n0-gv5">
+                                <variation key="heightClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="Aao-vK-ouh" firstAttribute="leading" secondItem="ki7-4k-I3h" secondAttribute="leading" constant="20" id="dvg-tH-oBe"/>
                             <constraint firstAttribute="trailing" secondItem="0tJ-Ks-6Na" secondAttribute="trailing" constant="20" id="e3N-iy-z7q"/>
+                            <constraint firstItem="Aao-vK-ouh" firstAttribute="top" secondItem="AHd-Tx-cSn" secondAttribute="bottom" constant="10" id="fWs-Hc-Ofq"/>
+                            <constraint firstItem="0tJ-Ks-6Na" firstAttribute="leading" secondItem="ki7-4k-I3h" secondAttribute="leading" constant="20" id="fYO-U2-U6J"/>
                             <constraint firstItem="oyE-KC-f7e" firstAttribute="centerY" secondItem="ki7-4k-I3h" secondAttribute="centerY" id="fmd-a0-oPI"/>
+                            <constraint firstItem="g7k-XV-9cC" firstAttribute="top" secondItem="eh1-3l-5Nh" secondAttribute="bottom" constant="20" id="gNG-uD-cR4">
+                                <variation key="heightClass=compact" constant="5"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="AHd-Tx-cSn" secondAttribute="trailing" constant="20" id="gbn-SK-Aiz">
+                                <variation key="heightClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="eh1-3l-5Nh" firstAttribute="leading" secondItem="ki7-4k-I3h" secondAttribute="leading" constant="20" id="kZi-vA-9n1"/>
                             <constraint firstItem="eh1-3l-5Nh" firstAttribute="top" secondItem="0tJ-Ks-6Na" secondAttribute="bottom" constant="5" id="oVM-or-lyL"/>
                             <constraint firstItem="DLU-Rh-2nE" firstAttribute="centerY" secondItem="ki7-4k-I3h" secondAttribute="centerYWithinMargins" multiplier="0.6" id="olX-yI-ZSr"/>
                             <constraint firstItem="DLU-Rh-2nE" firstAttribute="height" secondItem="ki7-4k-I3h" secondAttribute="height" multiplier="0.4" id="omQ-rg-ZDn"/>
+                            <constraint firstItem="AHd-Tx-cSn" firstAttribute="trailing" secondItem="0tJ-Ks-6Na" secondAttribute="trailing" id="pfI-pc-NnA"/>
+                            <constraint firstItem="DLU-Rh-2nE" firstAttribute="height" secondItem="ki7-4k-I3h" secondAttribute="height" multiplier="0.5" id="qib-ne-20u"/>
+                            <constraint firstItem="Aao-vK-ouh" firstAttribute="top" secondItem="AHd-Tx-cSn" secondAttribute="bottom" constant="20" id="r3Q-hL-LOi"/>
                             <constraint firstItem="0tJ-Ks-6Na" firstAttribute="top" secondItem="Aao-vK-ouh" secondAttribute="bottom" constant="5" id="rf8-CI-iNR"/>
+                            <constraint firstItem="AHd-Tx-cSn" firstAttribute="top" secondItem="eh1-3l-5Nh" secondAttribute="bottom" constant="10" id="uN4-hQ-7DU"/>
+                            <constraint firstItem="Aao-vK-ouh" firstAttribute="leading" secondItem="DLU-Rh-2nE" secondAttribute="trailing" constant="10" id="xXe-hR-8eA">
+                                <variation key="heightClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="oyE-KC-f7e" firstAttribute="centerX" secondItem="DLU-Rh-2nE" secondAttribute="centerX" id="y37-KB-J7B"/>
                             <constraint firstItem="Aao-vK-ouh" firstAttribute="top" secondItem="oyE-KC-f7e" secondAttribute="bottom" constant="20" id="yN3-aM-NY1"/>
+                            <constraint firstItem="AHd-Tx-cSn" firstAttribute="top" secondItem="LPA-dX-ccD" secondAttribute="bottom" constant="20" id="zhT-ph-Pip"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="3xO-J9-ObU"/>
+                                <exclude reference="XKu-1H-LJk"/>
+                                <exclude reference="XKx-TY-sJo"/>
+                                <exclude reference="c8N-Mc-2XQ"/>
                                 <exclude reference="omQ-rg-ZDn"/>
+                                <exclude reference="qib-ne-20u"/>
+                                <exclude reference="M46-TW-KPD"/>
+                                <exclude reference="Ru9-8f-HoS"/>
+                                <exclude reference="VfX-ys-APX"/>
+                                <exclude reference="Yyc-B8-Gkj"/>
+                                <exclude reference="cTR-fB-oRu"/>
+                                <exclude reference="gbn-SK-Aiz"/>
+                                <exclude reference="pfI-pc-NnA"/>
+                                <exclude reference="uN4-hQ-7DU"/>
+                                <exclude reference="zhT-ph-Pip"/>
+                                <exclude reference="NkV-QX-Rzi"/>
+                                <exclude reference="UQZ-NM-8Kd"/>
+                                <exclude reference="aJA-V9-I5m"/>
+                                <exclude reference="fWs-Hc-Ofq"/>
+                                <exclude reference="r3Q-hL-LOi"/>
+                                <exclude reference="xXe-hR-8eA"/>
+                                <exclude reference="cW3-n0-gv5"/>
+                                <exclude reference="fYO-U2-U6J"/>
+                                <exclude reference="Hgg-ys-1WX"/>
                                 <exclude reference="Nb3-6w-Kh4"/>
+                                <exclude reference="Pd9-ew-ZFZ"/>
+                                <exclude reference="Xjd-zf-AM4"/>
+                                <exclude reference="aIB-CP-7Im"/>
+                                <exclude reference="y37-KB-J7B"/>
+                                <exclude reference="bYN-NL-R1w"/>
+                                <exclude reference="kZi-vA-9n1"/>
+                                <exclude reference="gNG-uD-cR4"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="3xO-J9-ObU"/>
+                                <exclude reference="MX4-Lw-y5t"/>
+                                <exclude reference="OQ2-KE-Hmz"/>
+                                <exclude reference="XKu-1H-LJk"/>
+                                <exclude reference="XKx-TY-sJo"/>
+                                <include reference="c8N-Mc-2XQ"/>
+                                <exclude reference="olX-yI-ZSr"/>
+                                <include reference="qib-ne-20u"/>
+                                <exclude reference="M46-TW-KPD"/>
+                                <include reference="Ru9-8f-HoS"/>
+                                <exclude reference="TP5-GN-4gL"/>
+                                <exclude reference="UoN-R6-cZw"/>
+                                <exclude reference="VfX-ys-APX"/>
+                                <include reference="Yyc-B8-Gkj"/>
+                                <exclude reference="byf-pX-8Td"/>
+                                <exclude reference="cDj-IU-vBr"/>
+                                <include reference="cTR-fB-oRu"/>
+                                <include reference="gbn-SK-Aiz"/>
+                                <exclude reference="pfI-pc-NnA"/>
+                                <exclude reference="uN4-hQ-7DU"/>
+                                <exclude reference="zhT-ph-Pip"/>
+                                <exclude reference="NkV-QX-Rzi"/>
+                                <include reference="UQZ-NM-8Kd"/>
+                                <exclude reference="aJA-V9-I5m"/>
+                                <exclude reference="dvg-tH-oBe"/>
+                                <include reference="fWs-Hc-Ofq"/>
+                                <exclude reference="r3Q-hL-LOi"/>
+                                <exclude reference="xXe-hR-8eA"/>
+                                <exclude reference="yN3-aM-NY1"/>
+                                <exclude reference="0aX-F1-VCZ"/>
+                                <exclude reference="cW3-n0-gv5"/>
+                                <include reference="fYO-U2-U6J"/>
+                                <exclude reference="Hgg-ys-1WX"/>
+                                <include reference="Pd9-ew-ZFZ"/>
+                                <exclude reference="Xjd-zf-AM4"/>
+                                <include reference="aIB-CP-7Im"/>
+                                <exclude reference="ae4-Xc-bvs"/>
+                                <exclude reference="fmd-a0-oPI"/>
+                                <exclude reference="y37-KB-J7B"/>
+                                <exclude reference="RlJ-kA-x4W"/>
+                                <exclude reference="bYN-NL-R1w"/>
+                                <include reference="kZi-vA-9n1"/>
+                                <include reference="gNG-uD-cR4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -746,7 +931,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUz-BB-ulo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2741" y="-205"/>
+            <point key="canvasLocation" x="2741" y="-205.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yvK-Xl-Jei">
