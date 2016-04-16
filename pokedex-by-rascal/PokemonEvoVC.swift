@@ -17,6 +17,9 @@ class PokemonEvoVC: UIViewController {
     @IBOutlet weak var nextEvoLevel: UILabel!
     @IBOutlet weak var spacingLabel: UILabel!
     
+    @IBOutlet weak var currentEvoSV: UIStackView!
+    @IBOutlet weak var currentEvoLabelsSV: UIStackView!
+    
     var pokemon: Pokemon!
     
     override func viewDidLoad() {
@@ -45,6 +48,19 @@ class PokemonEvoVC: UIViewController {
                 nextEvoLevel.text = " "
                 spacingLabel.text = " "
             }
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        // Compact Height (w Any, h Compact) (e.g. iPhones in landscape).
+        if self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Compact {
+            // Move the current evo labels to below the image.
+            currentEvoSV.insertArrangedSubview(currentEvoImage, atIndex: 0)
+            currentEvoLabelsSV.insertArrangedSubview(currentEvoName, atIndex: 0)
+        } else {
+            // Set the current evo labels to above the image.
+            currentEvoSV.insertArrangedSubview(currentEvoImage, atIndex: 2)
+            currentEvoLabelsSV.insertArrangedSubview(currentEvoName, atIndex: 1)
         }
     }
 }
