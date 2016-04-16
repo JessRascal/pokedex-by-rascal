@@ -144,8 +144,11 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=compact-widthClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    </variation>
                                                     <variation key="heightClass=regular-widthClass=regular">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -162,21 +165,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a move to view more details about it..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYW-Nf-oN0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a move to view more details about it..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="GYW-Nf-oN0">
                                 <rect key="frame" x="20" y="89" width="560" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                </variation>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="8cG-mN-rE3" secondAttribute="trailing" constant="20" id="3id-4j-3Nd"/>
+                            <constraint firstAttribute="trailing" secondItem="8cG-mN-rE3" secondAttribute="trailing" constant="20" id="3id-4j-3Nd">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="GYW-Nf-oN0" secondAttribute="trailing" constant="20" id="DiL-3T-Wca"/>
-                            <constraint firstItem="GYW-Nf-oN0" firstAttribute="top" secondItem="ih5-iE-iAY" secondAttribute="bottom" constant="25" id="WyP-Dz-2jO"/>
+                            <constraint firstItem="GYW-Nf-oN0" firstAttribute="top" secondItem="ih5-iE-iAY" secondAttribute="bottom" constant="25" id="WyP-Dz-2jO">
+                                <variation key="heightClass=compact" constant="15"/>
+                            </constraint>
                             <constraint firstItem="q72-LA-zIA" firstAttribute="top" secondItem="8cG-mN-rE3" secondAttribute="bottom" id="XWY-5Z-Bdg"/>
                             <constraint firstItem="GYW-Nf-oN0" firstAttribute="leading" secondItem="XUi-xN-vJT" secondAttribute="leading" constant="20" id="lmv-cq-vZj"/>
-                            <constraint firstItem="8cG-mN-rE3" firstAttribute="top" secondItem="GYW-Nf-oN0" secondAttribute="bottom" constant="25" id="wOI-Uf-VJj"/>
-                            <constraint firstItem="8cG-mN-rE3" firstAttribute="leading" secondItem="XUi-xN-vJT" secondAttribute="leading" constant="20" id="yuZ-Qg-9HS"/>
+                            <constraint firstItem="8cG-mN-rE3" firstAttribute="top" secondItem="GYW-Nf-oN0" secondAttribute="bottom" constant="25" id="wOI-Uf-VJj">
+                                <variation key="heightClass=compact" constant="15"/>
+                            </constraint>
+                            <constraint firstItem="8cG-mN-rE3" firstAttribute="leading" secondItem="XUi-xN-vJT" secondAttribute="leading" constant="20" id="yuZ-Qg-9HS">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -212,6 +226,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         </variation>
@@ -237,6 +254,9 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=compact-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                </variation>
                                                                 <variation key="heightClass=regular-widthClass=regular">
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 </variation>
@@ -246,6 +266,9 @@
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=compact-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                                </variation>
                                                                 <variation key="heightClass=regular-widthClass=regular">
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                                 </variation>
@@ -260,6 +283,9 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=compact-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                </variation>
                                                                 <variation key="heightClass=regular-widthClass=regular">
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 </variation>
@@ -269,6 +295,9 @@
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=compact-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                                </variation>
                                                                 <variation key="heightClass=regular-widthClass=regular">
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                                 </variation>
@@ -291,6 +320,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         </variation>
@@ -302,7 +334,7 @@
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <variation key="heightClass=regular-widthClass=regular">
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         </variation>
                                                     </textView>
                                                 </subviews>
@@ -346,10 +378,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.14117647058823529" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="GdX-rK-wcp" firstAttribute="top" secondItem="88A-zm-vku" secondAttribute="bottom" constant="110" id="1pJ-3c-pIS"/>
-                            <constraint firstAttribute="trailing" secondItem="GdX-rK-wcp" secondAttribute="trailing" constant="20" id="EAe-kD-6LY"/>
+                            <constraint firstItem="GdX-rK-wcp" firstAttribute="top" secondItem="88A-zm-vku" secondAttribute="bottom" constant="110" id="1pJ-3c-pIS">
+                                <variation key="heightClass=compact" constant="80"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="GdX-rK-wcp" secondAttribute="trailing" constant="20" id="EAe-kD-6LY">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                             <constraint firstItem="e4A-ea-VM7" firstAttribute="top" secondItem="GdX-rK-wcp" secondAttribute="bottom" constant="-5" id="lcs-8x-sbS"/>
-                            <constraint firstItem="GdX-rK-wcp" firstAttribute="leading" secondItem="HYx-mx-6gw" secondAttribute="leading" constant="20" id="tsq-Ep-KSU"/>
+                            <constraint firstItem="GdX-rK-wcp" firstAttribute="leading" secondItem="HYx-mx-6gw" secondAttribute="leading" constant="20" id="tsq-Ep-KSU">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <connections>
@@ -417,14 +455,8 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xqI-a9-TiO" secondAttribute="height" multiplier="1:1" id="Mnl-Be-O0e"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="60" width="240" height="240"/>
-                                        </variation>
                                     </imageView>
                                 </subviews>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="280" y="93" width="240" height="300"/>
-                                </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GgJ-hk-pqE" userLabel="NextEvoSV">
                                 <rect key="frame" x="210" y="364" width="180" height="232"/>
@@ -467,10 +499,13 @@
                                                 </variation>
                                             </label>
                                         </subviews>
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="242" width="240" height="54"/>
+                                        </variation>
                                     </stackView>
                                 </subviews>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="280" y="493" width="240" height="300"/>
+                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="480" y="92" width="240" height="296"/>
                                 </variation>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evoArrowPortrait" translatesAutoresizingMaskIntoConstraints="NO" id="WwL-n7-MhI">
