@@ -23,9 +23,6 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         dataSource = self
         delegate = self
         
-        // Set the background of the PageController's view.
-        setBackground()
-        
         // Set the colours of the page control.
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.appAccentColor()
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.appPrimaryColor()
@@ -52,6 +49,11 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
                 setNavTitle(navTitle)
             }
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        // Set the background of the PageController's view.
+        setBackground()
     }
     
     func triggerMusicBg() {

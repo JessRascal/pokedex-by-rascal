@@ -473,11 +473,23 @@
                                     <rect key="frame" x="280" y="493" width="240" height="300"/>
                                 </variation>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evoArrow" translatesAutoresizingMaskIntoConstraints="NO" id="WwL-n7-MhI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evoArrowPortrait" translatesAutoresizingMaskIntoConstraints="NO" id="WwL-n7-MhI">
                                 <rect key="frame" x="273" y="315" width="54" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="WwL-n7-MhI" secondAttribute="height" multiplier="10:9" id="A2E-9Y-7Xf"/>
                                     <constraint firstAttribute="width" secondItem="WwL-n7-MhI" secondAttribute="height" multiplier="9:5" id="Stw-wa-clS"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="A2E-9Y-7Xf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="A2E-9Y-7Xf"/>
+                                        <exclude reference="Stw-wa-clS"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -538,6 +550,7 @@
                         <outlet property="currentEvoLabelsSV" destination="d4J-f5-6Eq" id="PqT-lx-48K"/>
                         <outlet property="currentEvoName" destination="zz3-2q-hFo" id="nhS-25-MVg"/>
                         <outlet property="currentEvoSV" destination="3aK-Sr-eWg" id="6rN-Yh-n7h"/>
+                        <outlet property="evoArrow" destination="WwL-n7-MhI" id="70w-ib-3YG"/>
                         <outlet property="nextEvoImage" destination="qiZ-Tq-Idt" id="hMb-65-aZq"/>
                         <outlet property="nextEvoLevel" destination="vum-fu-bo9" id="YMj-f4-pE6"/>
                         <outlet property="nextEvoName" destination="saS-NT-TvO" id="ll9-bL-Cze"/>
@@ -968,7 +981,7 @@
         <image name="297" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
         <image name="cancel-button-empty" width="101" height="100"/>
-        <image name="evoArrow" width="54" height="30"/>
+        <image name="evoArrowPortrait" width="54" height="30"/>
         <image name="evoPlaceholder" width="300" height="300"/>
         <image name="musicOn" width="21" height="22"/>
     </resources>
