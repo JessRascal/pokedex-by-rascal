@@ -499,14 +499,8 @@
                                                 </variation>
                                             </label>
                                         </subviews>
-                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="242" width="240" height="54"/>
-                                        </variation>
                                     </stackView>
                                 </subviews>
-                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="480" y="92" width="240" height="296"/>
-                                </variation>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evoArrowPortrait" translatesAutoresizingMaskIntoConstraints="NO" id="WwL-n7-MhI">
                                 <rect key="frame" x="273" y="315" width="54" height="30"/>

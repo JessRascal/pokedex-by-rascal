@@ -29,12 +29,15 @@ class PokemonEvoVC: UIViewController {
         updateUI()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        evoArrow.image = nil
+    }
+    
     func updateUI() {
         currentEvoName.text = pokemon.name.capitalizedString
         let currentImage = UIImage(named: "\(pokemon.pokedexId)")
         currentEvoImage.image = currentImage
-        
-        evoArrow.image = nil
         
         if pokemon.nextEvolutionId == "" {
             nextEvoImage.image = UIImage(named: "evoPlaceholder")
