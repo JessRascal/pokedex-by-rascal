@@ -36,6 +36,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         parsePokemonCSV()
     }
     
+    func setNavTitle() {
+        let imageView = UIImageView(image: UIImage(named: "p-dex-logo"))
+        imageView.contentMode = .ScaleAspectFit
+        imageView.bounds.size.height = 30
+        navigationItem.titleView = imageView
+    }
+    
     // Parse the Pokemon CSV file, and add the data (name, and id) to the Pokemon array.
     func parsePokemonCSV() {
         let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv")!
@@ -54,13 +61,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    func setNavTitle() {
-        let imageView = UIImageView(image: UIImage(named: "p-dex-logo"))
-        imageView.contentMode = .ScaleAspectFit
-        imageView.bounds.size.height = 30
-        navigationItem.titleView = imageView
-    }
-    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokeCell", forIndexPath: indexPath) as? PokeCell {
@@ -75,21 +75,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else {
             return UICollectionViewCell()
         }
-    }
-    
-    // Perform the appropriate segue when a cell is tapped.
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let poke: Pokemon!
-        if inSearchMode {
-            poke = filteredPokemon[indexPath.row]
-        } else {
-            poke = pokemon[indexPath.row]
-        }
-        // Remove focus from the search bar if it is empty.
-        if searchBar.text == nil || searchBar.text == "" {
-            searchBar.resignFirstResponder()
-        }
-        performSegueWithIdentifier("DetailSegue", sender: poke)
     }
     
     // Set the number of items (cells) in each section.
@@ -110,11 +95,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSizeMake(100, 116)
     }
     
-    // Play/Stop the music when the music button is tapped.
-    @IBAction func musicButtonTapped(sender: UIBarButtonItem!) {
-        MusicPlayerSingleton.globalMusicPlayer.triggerMusicBg()
-        if let barButton = navigationItem.rightBarButtonItem {
-            barButton.image = MusicPlayerSingleton.globalMusicPlayer.musicIcon
+    // Filter the items in the collection view based on the user's input in the search bar.
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            inSearchMode = false
+            view.endEditing(true)
+            collection.reloadData()
+        } else {
+            inSearchMode = true
+            let lower = searchBar.text!.lowercaseString
+            filteredPokemon = pokemon.filter({$0.name.rangeOfString(lower) != nil})
+            collection.reloadData()
         }
     }
     
@@ -137,18 +128,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    // Filter the items in the collection view based on the user's input in the search bar.
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == "" {
-            inSearchMode = false
-            view.endEditing(true)
-            collection.reloadData()
+    // Perform the appropriate segue when a cell is tapped.
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let poke: Pokemon!
+        if inSearchMode {
+            poke = filteredPokemon[indexPath.row]
         } else {
-            inSearchMode = true
-            let lower = searchBar.text!.lowercaseString
-            filteredPokemon = pokemon.filter({$0.name.rangeOfString(lower) != nil})
-            collection.reloadData()
+            poke = pokemon[indexPath.row]
         }
+        // Remove focus from the search bar if it is empty.
+        if searchBar.text == nil || searchBar.text == "" {
+            searchBar.resignFirstResponder()
+        }
+        performSegueWithIdentifier("DetailSegue", sender: poke)
     }
     
     // Pass the Pokemon details to the DetailsVC when the segue is triggered.
@@ -159,6 +151,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     pageVC.selectedPokemon = poke
                 }
             }
+        }
+    }
+    
+    // Play/Stop the music when the music button on the nav bar is tapped.
+    @IBAction func musicButtonTapped(sender: UIBarButtonItem!) {
+        MusicPlayerSingleton.globalMusicPlayer.triggerMusicBg()
+        if let barButton = navigationItem.rightBarButtonItem {
+            barButton.image = MusicPlayerSingleton.globalMusicPlayer.musicIcon
         }
     }
 }

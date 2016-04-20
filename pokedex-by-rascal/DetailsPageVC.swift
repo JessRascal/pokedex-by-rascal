@@ -59,11 +59,8 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         setBackground()
     }
     
-    func triggerMusicBg() {
-        MusicPlayerSingleton.globalMusicPlayer.triggerMusicBg()
-        if let barButton = navigationItem.rightBarButtonItem {
-            barButton.image = MusicPlayerSingleton.globalMusicPlayer.musicIcon
-        }
+    func setNavTitle(navTitle: String) {
+        navigationItem.title = navTitle
     }
     
     // Get a view controller and set its Pokemon variable object.
@@ -83,10 +80,6 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         if let movesVC = currentVC as? PokemonMovesVC {
             movesVC.pokemon = selectedPokemon
         }
-    }
-    
-    func setNavTitle(navTitle: String) {
-        navigationItem.title = navTitle
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
@@ -137,15 +130,6 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         return pagedVCs[nextIndex]
     }
     
-    // Set the navigation bar title when the page is changed.
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if let currentVC = viewControllers?.first {
-            if let navTitle = currentVC.restorationIdentifier {
-                setNavTitle(navTitle)
-            }
-        }
-    }
-    
     // Display the page indicator graphic.
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return pagedVCs.count
@@ -158,16 +142,25 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         return currentVCIndex
     }
     
+    // Set the navigation bar title when the page is changed.
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if let currentVC = viewControllers?.first {
+            if let navTitle = currentVC.restorationIdentifier {
+                setNavTitle(navTitle)
+            }
+        }
+    }
+    
     // Set the background image.
     func setBackground() {
         // Create the background imageview.
-//        let bgImage = UIImageView(image: UIImage(named: "bg"))
+        //        let bgImage = UIImageView(image: UIImage(named: "bg"))
         bgImage.contentMode = .ScaleAspectFill
         bgImage.frame.size.width = self.view.frame.width
         bgImage.frame.size.height = self.view.frame.height
         
         // Create the semi-transparent background view.
-//        let bgView = UIView()
+        //        let bgView = UIView()
         bgView.backgroundColor = UIColor.appSecondaryColorTrans()
         bgView.frame.size.width = self.view.frame.width
         bgView.frame.size.height = self.view.frame.height
@@ -175,6 +168,14 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
         // Add both the the page controller view.
         view.insertSubview(bgImage, atIndex: 0)
         view.insertSubview(bgView, atIndex: 1)
+    }
+    
+    // Play/Stop the music when the music button on the nav bar is tapped.
+    func triggerMusicBg() {
+        MusicPlayerSingleton.globalMusicPlayer.triggerMusicBg()
+        if let barButton = navigationItem.rightBarButtonItem {
+            barButton.image = MusicPlayerSingleton.globalMusicPlayer.musicIcon
+        }
     }
     
 }

@@ -9,16 +9,11 @@
 import UIKit
 
 class MovesTable: UITableView {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        // Remove the separator lines in the table view for empty cells.
+        self.tableFooterView = UIView(frame: CGRectZero)
     }
-    
-    func setBackground(image: UIImage) {
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .ScaleAspectFit
-        backgroundView = imageView
-    }
-
 }

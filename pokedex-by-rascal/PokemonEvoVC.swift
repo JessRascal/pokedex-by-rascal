@@ -17,7 +17,6 @@ class PokemonEvoVC: UIViewController {
     @IBOutlet weak var nextEvoLevel: UILabel!
     @IBOutlet weak var spacingLabel: UILabel!
     @IBOutlet weak var evoArrow: UIImageView!
-    
     @IBOutlet weak var currentEvoSV: UIStackView!
     @IBOutlet weak var currentEvoLabelsSV: UIStackView!
     
@@ -57,22 +56,6 @@ class PokemonEvoVC: UIViewController {
         }
     }
     
-    // Function to change the evo arrow image with a fade effect.
-    func changeArrowImage(imageName: String) {
-        let image = UIImage(named: imageName)
-        // Fade out the evoArrow.
-        UIView.animateWithDuration(1, animations: {
-            self.evoArrow.alpha = 0
-            }, completion: {(finished: Bool) in
-                // Change the evoArrow to the new image.
-                self.evoArrow.image = image
-                // Fade in the evoArrow.
-                UIView.animateWithDuration(1, animations: {
-                    self.evoArrow.alpha = 100
-                })
-        })
-    }
-    
     override func viewDidLayoutSubviews() {
         // Compact Height (w Any, h Compact) (e.g. iPhones in landscape).
         if self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Compact {
@@ -91,5 +74,21 @@ class PokemonEvoVC: UIViewController {
             // Change the evo arrow image to the portrait version.
             changeArrowImage("evoArrowPortrait")
         }
+    }
+    
+    // Function to change the evo arrow image with a fade effect.
+    func changeArrowImage(imageName: String) {
+        let image = UIImage(named: imageName)
+        // Fade out the evoArrow.
+        UIView.animateWithDuration(1, animations: {
+            self.evoArrow.alpha = 0
+            }, completion: {(finished: Bool) in
+                // Change the evoArrow to the new image.
+                self.evoArrow.image = image
+                // Fade in the evoArrow.
+                UIView.animateWithDuration(1, animations: {
+                    self.evoArrow.alpha = 100
+                })
+        })
     }
 }

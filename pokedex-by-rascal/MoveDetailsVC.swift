@@ -42,8 +42,8 @@ class MoveDetailsVC: UIViewController {
             }, completion: nil)
     }
     
-    // Ensures the description UITextView starts off scrolled to the top.
     override func viewDidLayoutSubviews() {
+        // Ensures the description UITextView starts off scrolled to the top.
         self.moveDesc.setContentOffset(CGPointZero, animated: false)
     }
     
