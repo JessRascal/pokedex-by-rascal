@@ -11,6 +11,8 @@ import UIKit
 class MoveCell: UITableViewCell {
 
     @IBOutlet weak var moveName: UILabel!
+    @IBOutlet weak var powerLabel: UILabel!
+    @IBOutlet weak var accuracyLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +24,8 @@ class MoveCell: UITableViewCell {
     
     func configureCell(move: Move) {
         moveName.text = move.name
+        powerLabel.text = move.power
+        accuracyLabel.text = move.acc
     }
 
 }

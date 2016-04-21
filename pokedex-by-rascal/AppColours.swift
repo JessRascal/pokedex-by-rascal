@@ -34,4 +34,9 @@ extension UIColor {
     class func appAccentColor() -> UIColor {
         return UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 1)
     }
+    
+    // Semi-transparent Accent App Colour - Dark Grey/Black (#222224) with an alpha value of 0.5.
+    class func appAccentColorTrans() -> UIColor {
+        return UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 0.5)
+    }
 }

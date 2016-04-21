@@ -128,39 +128,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8cG-mN-rE3" customClass="MovesTable" customModule="pokedex_by_rascal" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8cG-mN-rE3" customClass="MovesTable" customModule="pokedex_by_rascal" customModuleProvider="target">
                                 <rect key="frame" x="20" y="134" width="560" height="466"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.14117647058823529" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoveCell" id="bAU-GL-2EQ" customClass="MoveCell" customModule="pokedex_by_rascal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="560" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bAU-GL-2EQ" id="wLB-5C-p1O">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OjH-RK-i0g">
-                                                    <rect key="frame" x="8" y="8" width="544" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=compact-widthClass=regular">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=regular">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    </variation>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="n5T-dC-SYu" userLabel="CellDataSV">
+                                                    <rect key="frame" x="8" y="15" width="544" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OjH-RK-i0g">
+                                                            <rect key="frame" x="0.0" y="0.0" width="386" height="25"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=compact-widthClass=regular">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            </variation>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="24c-Lc-Y0p" userLabel="PowerSV">
+                                                            <rect key="frame" x="411" y="0.0" width="53" height="25"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="power-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Lx9-eh-RUf">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="24" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="Lx9-eh-RUf" secondAttribute="height" multiplier="38:39" id="ddh-Z9-qDs"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="egM-me-6w2">
+                                                                    <rect key="frame" x="29" y="0.0" width="24" height="25"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <variation key="heightClass=compact-widthClass=regular">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    </variation>
+                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    </variation>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cf9-Ep-nBB" userLabel="AccuracySV">
+                                                            <rect key="frame" x="489" y="0.0" width="55" height="25"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accuracy-icon" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-au-SSi">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="WoF-au-SSi" secondAttribute="height" multiplier="1:1" id="g5l-64-tip"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="vru-Bj-i7P">
+                                                                    <rect key="frame" x="30" y="0.0" width="25" height="25"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <variation key="heightClass=compact-widthClass=regular">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    </variation>
+                                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    </variation>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="OjH-RK-i0g" firstAttribute="leading" secondItem="wLB-5C-p1O" secondAttribute="leading" constant="8" id="VmI-O6-w1v"/>
-                                                <constraint firstItem="OjH-RK-i0g" firstAttribute="top" secondItem="wLB-5C-p1O" secondAttribute="top" constant="8" id="h56-3e-qtn"/>
-                                                <constraint firstAttribute="bottom" secondItem="OjH-RK-i0g" secondAttribute="bottom" constant="8" id="pDs-9a-qSC"/>
-                                                <constraint firstAttribute="trailing" secondItem="OjH-RK-i0g" secondAttribute="trailing" constant="8" id="zi4-4T-xHY"/>
+                                                <constraint firstAttribute="trailing" secondItem="n5T-dC-SYu" secondAttribute="trailing" constant="8" id="Hn1-ph-fJk"/>
+                                                <constraint firstItem="n5T-dC-SYu" firstAttribute="leading" secondItem="wLB-5C-p1O" secondAttribute="leading" constant="8" id="djQ-tA-g4e"/>
+                                                <constraint firstAttribute="bottom" secondItem="n5T-dC-SYu" secondAttribute="bottom" constant="15" id="r6b-A0-E2K"/>
+                                                <constraint firstItem="n5T-dC-SYu" firstAttribute="top" secondItem="wLB-5C-p1O" secondAttribute="top" constant="15" id="rS4-ba-84e"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="accuracyLabel" destination="vru-Bj-i7P" id="lPy-7g-udF"/>
                                             <outlet property="moveName" destination="OjH-RK-i0g" id="4Hf-Se-lSy"/>
+                                            <outlet property="powerLabel" destination="egM-me-6w2" id="kpR-vm-Y3a"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1008,10 +1062,12 @@
     <resources>
         <image name="1" width="120" height="120"/>
         <image name="297" width="120" height="120"/>
+        <image name="accuracy-icon" width="26" height="26"/>
         <image name="bg" width="1920" height="1200"/>
         <image name="cancel-button-empty" width="101" height="100"/>
         <image name="evoArrowPortrait" width="54" height="30"/>
         <image name="evoPlaceholder" width="300" height="300"/>
         <image name="musicOn" width="21" height="22"/>
+        <image name="power-icon" width="24" height="26"/>
     </resources>
 </document>
