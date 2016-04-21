@@ -154,13 +154,11 @@ class DetailsPageVC: UIPageViewController, UIPageViewControllerDataSource, UIPag
     // Set the background image.
     func setBackground() {
         // Create the background imageview.
-        //        let bgImage = UIImageView(image: UIImage(named: "bg"))
         bgImage.contentMode = .ScaleAspectFill
         bgImage.frame.size.width = self.view.frame.width
         bgImage.frame.size.height = self.view.frame.height
         
         // Create the semi-transparent background view.
-        //        let bgView = UIView()
         bgView.backgroundColor = UIColor.appSecondaryColorTrans()
         bgView.frame.size.width = self.view.frame.width
         bgView.frame.size.height = self.view.frame.height
