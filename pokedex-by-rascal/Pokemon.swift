@@ -22,9 +22,10 @@ class Pokemon {
     private var _nextEvolutionId: String!
     private var _nextEvolutionLevel: String!
     private var _pokemonUrl: String!
+    private var _moveUrls = [String]()
+    private var _moves = [Move]()
     
-    
-    // Getters (Encapsulation).
+    // Getters (Data Encapsulation).
     var name: String {
         return _name
     }
@@ -96,6 +97,14 @@ class Pokemon {
         return _nextEvolutionLevel
     }
     
+    var moveUrls: [String] {
+        return _moveUrls
+    }
+    
+    var moves: [Move] {
+        return _moves
+    }
+    
     // Initialization.
     init(name: String, pokedexId: Int) {
         self._name = name
@@ -104,12 +113,13 @@ class Pokemon {
         _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
     }
     
-    // Retireve the Pokemon data from the web APIs, and inform once complete using the closure.
+    // Retrieve the Pokemon data from the web API, and inform once complete using the closure.
     func downloadPokemonDetails(completed: DownloadComplete) {
         let url = NSURL(string: _pokemonUrl)!
         Alamofire.request(.GET, url).responseJSON { response in
             let result = response.result
             
+            // Get the Pokemon's bio details.
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 
                 if let weight = dict["weight"] as? String {
@@ -134,7 +144,7 @@ class Pokemon {
                     }
                     
                     if types.count > 1 {
-                        for var x = 1; x < types.count; x++ {
+                        for x in 1..<types.count {
                             if let name = types[x]["name"] {
                                 self._type! += "/\(name.capitalizedString)"
                             }
@@ -144,6 +154,7 @@ class Pokemon {
                     self._type = ""
                 }
                 
+                // Get the Pokemon's description.
                 if let descArr = dict["descriptions"] as? [Dictionary<String, String>] where descArr.count > 0 {
                     if let url = descArr[0]["resource_uri"] {
                         let nsurl = NSURL(string: "\(URL_BASE)\(url)")!
@@ -161,32 +172,89 @@ class Pokemon {
                     } else {
                         self._description = ""
                     }
-                    
-                    if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] where evolutions.count > 0{
-                        if let to = evolutions[0]["to"] as? String {
-                            
-                            // Can't support mega pokemon right now but api still has mega data.
-                            if to.rangeOfString("mega") == nil {
-                                if let uri = evolutions[0]["resource_uri"] as? String {
-                                    let newStr = uri.stringByReplacingOccurrencesOfString("/api/v1/pokemon/", withString: "")
-                                    let num = newStr.stringByReplacingOccurrencesOfString("/", withString: "")
-                                    
-                                    self._nextEvolutionId = num
-                                    self._nextEvolutionText = to
-                                    
-                                    
-                                    if let lvl = evolutions[0]["level"] as? Int {
-                                        self._nextEvolutionLevel = "\(lvl)"
-                                    }
+                } // descArr end.
+                
+                // Get the Pokemon's evolutions.
+                if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] where evolutions.count > 0 {
+                    if let to = evolutions[0]["to"] as? String {
+                        
+                        // Can't support mega pokemon right now but api still has mega data.
+                        if to.rangeOfString("mega") == nil {
+                            if let uri = evolutions[0]["resource_uri"] as? String {
+                                let newStr = uri.stringByReplacingOccurrencesOfString("/api/v1/pokemon/", withString: "")
+                                let num = newStr.stringByReplacingOccurrencesOfString("/", withString: "")
+                                
+                                self._nextEvolutionId = num
+                                self._nextEvolutionText = to
+                                
+                                if let lvl = evolutions[0]["level"] as? Int {
+                                    self._nextEvolutionLevel = "\(lvl)"
                                 }
                             }
-                            
                         }
                     }
-                    
-                }
+                } // evolutions end.
                 
-            }
+                // Clear out exsiting move URLs (avoid duplicates).
+                self._moveUrls = []
+                // Get the URLs of the Pokemon's moves.
+                if let movesArr = dict["moves"] as? [Dictionary<String, AnyObject>] where movesArr.count > 0 {
+                    for x in 0..<movesArr.count {
+                        if let url = movesArr[x]["resource_uri"] as? String {
+                            self._moveUrls.append(url)
+                        }
+                    }
+                }
+            } // dict end.
         }
+    }
+    
+    func downloadMoveDetails(completed: MovesDownloadComplete) {
+        // Clear out existing move data (avoid duplicates).
+        self._moves = []
+        // Get the Pokemon's move(s) data.
+        for x in 0..<_moveUrls.count {
+            
+            var moveName = ""
+            var moveDesc = ""
+            var moveAcc = ""
+            var movePower = ""
+            
+            let url = _moveUrls[x]
+            let nsurl = NSURL(string: "\(URL_BASE)\(url)")!
+            Alamofire.request(.GET, nsurl).responseJSON { response in
+                let result = response.result
+                
+                // Get the Move's details
+                if let dict = result.value as? Dictionary<String, AnyObject> {
+                    
+                    if let name = dict["name"] as? String {
+                        // Remove the hyphens from the move's name.
+                        let formattedName = name.stringByReplacingOccurrencesOfString("-", withString: " ")
+                        moveName = formattedName.capitalizedString
+                    }
+                    
+                    if let desc = dict["description"] as? String {
+                        moveDesc = desc
+                    }
+                    
+                    if let accuracy = dict["accuracy"] as? Int {
+                        moveAcc = "\(accuracy)"
+                    }
+                    
+                    if let power = dict["power"] as? Int {
+                        movePower = "\(power)"
+                    }
+                    
+                    let newMove = Move(url: url, name: moveName, desc: moveDesc, acc: moveAcc, power: movePower)
+                    self._moves.append(newMove)
+                    
+                } // dict end.
+                // Only signify completion once all of the GETs have been completed for ALL of the moves.
+                if x == self._moveUrls.count - 1{
+                    completed()
+                }
+            }
+        } // for loop end.
     }
 }

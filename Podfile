@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'pokedex-by-rascal' do
 pod 'Alamofire', '~> 3.0'
+pod "SwiftSpinner"
 end
 
